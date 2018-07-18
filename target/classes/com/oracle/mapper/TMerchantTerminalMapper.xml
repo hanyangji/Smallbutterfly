@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.oracle.dao.TMerchantTerminalMapper" >
+  <resultMap id="BaseResultMap" type="com.oracle.entity.TMerchantTerminal" >
+    <result column="CUSTOMERID" property="customerid" jdbcType="VARCHAR" />
+    <result column="BRANCHID" property="branchid" jdbcType="VARCHAR" />
+    <result column="BRANCHNAME" property="branchname" jdbcType="VARCHAR" />
+    <result column="BRANCHADDRESS" property="branchaddress" jdbcType="VARCHAR" />
+    <result column="BRANCHCONTACT" property="branchcontact" jdbcType="VARCHAR" />
+    <result column="BRANCHTEL" property="branchtel" jdbcType="VARCHAR" />
+    <result column="CREATDATE" property="creatdate" jdbcType="VARCHAR" />
+    <result column="MODIFYDATE" property="modifydate" jdbcType="VARCHAR" />
+    <result column="TERMINALID" property="terminalid" jdbcType="VARCHAR" />
+    <result column="TERMINALTYPE" property="terminaltype" jdbcType="VARCHAR" />
+    <result column="TERMINALSTATUS" property="terminalstatus" jdbcType="VARCHAR" />
+    <result column="PROPERTY" property="property" jdbcType="VARCHAR" />
+    <result column="TERMINALSERIAL" property="terminalserial" jdbcType="VARCHAR" />
+    <result column="TERMINALBRAND" property="terminalbrand" jdbcType="VARCHAR" />
+    <result column="TERMINALMODEL" property="terminalmodel" jdbcType="VARCHAR" />
+    <result column="REMARK" property="remark" jdbcType="VARCHAR" />
+    <result column="LOGOUTDATE" property="logoutdate" jdbcType="VARCHAR" />
+    <result column="DEPOSIT" property="deposit" jdbcType="VARCHAR" />
+    <result column="MAINTAINFEE" property="maintainfee" jdbcType="VARCHAR" />
+    <result column="COMMUNICATIONFEE" property="communicationfee" jdbcType="VARCHAR" />
+  </resultMap>
+  
+    <delete id="deleteBatch" parameterType="java.util.List" >
+        <foreach collection="list" item="item" index="index"  open="begin" close="; end;" separator=";">    
+        delete from T_TERMINAL_INFO   
+        where CUSTOMERID  
+        in (#{item.customerid,jdbcType=CHAR})   
+        and TERMINALID in #{item.terminalid,jdbcType=CHAR}   
+        </foreach>  
+    </delete>
+  <insert id="insert" parameterType="com.oracle.entity.TMerchantTerminal" >
+    insert all 
+    <foreach collection="list" item="item" index="index" separator=" " >
+    into T_TERMINAL_INFO (CUSTOMERID, BRANCHID, BRANCHNAME, 
+      BRANCHADDRESS, BRANCHCONTACT, BRANCHTEL, 
+      CREATDATE, MODIFYDATE, TERMINALID, 
+      TERMINALTYPE, TERMINALSTATUS, PROPERTY, 
+      TERMINALSERIAL, TERMINALBRAND, TERMINALMODEL, 
+      REMARK, LOGOUTDATE, DEPOSIT, 
+      MAINTAINFEE, COMMUNICATIONFEE)
+    values (#{item.customerid,jdbcType=VARCHAR}, #{item.branchid,jdbcType=VARCHAR}, #{item.branchname,jdbcType=VARCHAR}, 
+      #{item.branchaddress,jdbcType=VARCHAR}, #{item.branchcontact,jdbcType=VARCHAR}, #{item.branchtel,jdbcType=VARCHAR}, 
+      #{item.creatdate,jdbcType=VARCHAR}, #{item.modifydate,jdbcType=VARCHAR}, #{item.terminalid,jdbcType=VARCHAR}, 
+      #{item.terminaltype,jdbcType=VARCHAR}, #{item.terminalstatus,jdbcType=VARCHAR}, #{item.property,jdbcType=VARCHAR}, 
+      #{item.terminalserial,jdbcType=VARCHAR}, #{item.terminalbrand,jdbcType=VARCHAR}, #{item.terminalmodel,jdbcType=VARCHAR}, 
+      #{item.remark,jdbcType=VARCHAR}, #{item.logoutdate,jdbcType=VARCHAR}, #{item.deposit,jdbcType=VARCHAR}, 
+      #{item.maintainfee,jdbcType=VARCHAR}, #{item.communicationfee,jdbcType=VARCHAR})
+      </foreach>
+   select 1 from dual
+  </insert>
+  <insert id="insertSelective" parameterType="com.oracle.entity.TMerchantTerminal" >
+    insert into T_TERMINAL_INFO
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="customerid != null" >
+        CUSTOMERID,
+      </if>
+      <if test="branchid != null" >
+        BRANCHID,
+      </if>
+      <if test="branchname != null" >
+        BRANCHNAME,
+      </if>
+      <if test="branchaddress != null" >
+        BRANCHADDRESS,
+      </if>
+      <if test="branchcontact != null" >
+        BRANCHCONTACT,
+      </if>
+      <if test="branchtel != null" >
+        BRANCHTEL,
+      </if>
+      <if test="creatdate != null" >
+        CREATDATE,
+      </if>
+      <if test="modifydate != null" >
+        MODIFYDATE,
+      </if>
+      <if test="terminalid != null" >
+        TERMINALID,
+      </if>
+      <if test="terminaltype != null" >
+        TERMINALTYPE,
+      </if>
+      <if test="terminalstatus != null" >
+        TERMINALSTATUS,
+      </if>
+      <if test="property != null" >
+        PROPERTY,
+      </if>
+      <if test="terminalserial != null" >
+        TERMINALSERIAL,
+      </if>
+      <if test="terminalbrand != null" >
+        TERMINALBRAND,
+      </if>
+      <if test="terminalmodel != null" >
+        TERMINALMODEL,
+      </if>
+      <if test="remark != null" >
+        REMARK,
+      </if>
+      <if test="logoutdate != null" >
+        LOGOUTDATE,
+      </if>
+      <if test="deposit != null" >
+        DEPOSIT,
+      </if>
+      <if test="maintainfee != null" >
+        MAINTAINFEE,
+      </if>
+      <if test="communicationfee != null" >
+        COMMUNICATIONFEE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="customerid != null" >
+        #{customerid,jdbcType=VARCHAR},
+      </if>
+      <if test="branchid != null" >
+        #{branchid,jdbcType=VARCHAR},
+      </if>
+      <if test="branchname != null" >
+        #{branchname,jdbcType=VARCHAR},
+      </if>
+      <if test="branchaddress != null" >
+        #{branchaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="branchcontact != null" >
+        #{branchcontact,jdbcType=VARCHAR},
+      </if>
+      <if test="branchtel != null" >
+        #{branchtel,jdbcType=VARCHAR},
+      </if>
+      <if test="creatdate != null" >
+        #{creatdate,jdbcType=VARCHAR},
+      </if>
+      <if test="modifydate != null" >
+        #{modifydate,jdbcType=VARCHAR},
+      </if>
+      <if test="terminalid != null" >
+        #{terminalid,jdbcType=VARCHAR},
+      </if>
+      <if test="terminaltype != null" >
+        #{terminaltype,jdbcType=VARCHAR},
+      </if>
+      <if test="terminalstatus != null" >
+        #{terminalstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="property != null" >
+        #{property,jdbcType=VARCHAR},
+      </if>
+      <if test="terminalserial != null" >
+        #{terminalserial,jdbcType=VARCHAR},
+      </if>
+      <if test="terminalbrand != null" >
+        #{terminalbrand,jdbcType=VARCHAR},
+      </if>
+      <if test="terminalmodel != null" >
+        #{terminalmodel,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="logoutdate != null" >
+        #{logoutdate,jdbcType=VARCHAR},
+      </if>
+      <if test="deposit != null" >
+        #{deposit,jdbcType=VARCHAR},
+      </if>
+      <if test="maintainfee != null" >
+        #{maintainfee,jdbcType=VARCHAR},
+      </if>
+      <if test="communicationfee != null" >
+        #{communicationfee,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

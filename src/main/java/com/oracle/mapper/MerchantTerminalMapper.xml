@@ -1,0 +1,2134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.oracle.dao.MerchantTerminalMapper" >
+  <resultMap id="BaseResultMap" type="com.oracle.entity.MerchantTerminal" >
+    <result column="商户编码" property="商户编码" jdbcType="NVARCHAR" />
+    <result column="分公司编码" property="分公司编码" jdbcType="NVARCHAR" />
+    <result column="拓展机构" property="拓展机构" jdbcType="NVARCHAR" />
+    <result column="商户申请日期" property="商户申请日期" jdbcType="NVARCHAR" />
+    <result column="兴业商户结算账户账号" property="兴业商户结算账户账号" jdbcType="NVARCHAR" />
+    <result column="兴业结算开户行支付系统行号" property="兴业结算开户行支付系统行号" jdbcType="NVARCHAR" />
+    <result column="兴业商户结算开户行名称" property="兴业商户结算开户行名称" jdbcType="NVARCHAR" />
+    <result column="兴业商户结算账户名称" property="兴业商户结算账户名称" jdbcType="NVARCHAR" />
+    <result column="商户所属分公司" property="商户所属分公司" jdbcType="NVARCHAR" />
+    <result column="商户所属地市业务部" property="商户所属地市业务部" jdbcType="NVARCHAR" />
+    <result column="商户来源渠道" property="商户来源渠道" jdbcType="NVARCHAR" />
+    <result column="发展人_推荐人" property="发展人推荐人" jdbcType="NVARCHAR" />
+    <result column="所属收单机构" property="所属收单机构" jdbcType="NVARCHAR" />
+    <result column="收单机构32域" property="收单机构32域" jdbcType="NVARCHAR" />
+    <result column="服务模式" property="服务模式" jdbcType="NVARCHAR" />
+    <result column="商户编码前三位机构代码" property="商户编码前三位机构代码" jdbcType="NVARCHAR" />
+    <result column="商户所在地区" property="商户所在地区" jdbcType="NVARCHAR" />
+    <result column="商户MCC42" property="商户mcc42" jdbcType="NVARCHAR" />
+    <result column="商户类型_18域MCC" property="商户类型18域mcc" jdbcType="NVARCHAR" />
+    <result column="套用商户类型原因" property="套用商户类型原因" jdbcType="NVARCHAR" />
+    <result column="酒店级别" property="酒店级别" jdbcType="NVARCHAR" />
+    <result column="是否按卡种结算" property="是否按卡种结算" jdbcType="NVARCHAR" />
+    <result column="商户结算账户名称" property="商户结算账户名称" jdbcType="NVARCHAR" />
+    <result column="商户结算账户账号" property="商户结算账户账号" jdbcType="NVARCHAR" />
+    <result column="商户结算开户行名称" property="商户结算开户行名称" jdbcType="NVARCHAR" />
+    <result column="商户结算开户行支付系统行号" property="商户结算开户行支付系统行号" jdbcType="NVARCHAR" />
+    <result column="信用卡结算账户名称" property="信用卡结算账户名称" jdbcType="NVARCHAR" />
+    <result column="信用卡结算账户账号" property="信用卡结算账户账号" jdbcType="NVARCHAR" />
+    <result column="信用卡结算开户行名称" property="信用卡结算开户行名称" jdbcType="NVARCHAR" />
+    <result column="信用卡结算开户行支付系统行号" property="信用卡结算开户行支付系统行号" jdbcType="NVARCHAR" />
+    <result column="支出账户名称" property="支出账户名称" jdbcType="NVARCHAR" />
+    <result column="支出账户账号" property="支出账户账号" jdbcType="NVARCHAR" />
+    <result column="支出开户行名称" property="支出开户行名称" jdbcType="NVARCHAR" />
+    <result column="支出开户行支付系统行号" property="支出开户行支付系统行号" jdbcType="NVARCHAR" />
+    <result column="借记卡账户名称" property="借记卡账户名称" jdbcType="NVARCHAR" />
+    <result column="借记卡账户账号" property="借记卡账户账号" jdbcType="NVARCHAR" />
+    <result column="借记卡开户行名称" property="借记卡开户行名称" jdbcType="NVARCHAR" />
+    <result column="借记卡开户行支付系统行号" property="借记卡开户行支付系统行号" jdbcType="NVARCHAR" />
+    <result column="工商注册名称" property="工商注册名称" jdbcType="NVARCHAR" />
+    <result column="营业名称" property="营业名称" jdbcType="NVARCHAR" />
+    <result column="英文名称" property="英文名称" jdbcType="NVARCHAR" />
+    <result column="英文简称" property="英文简称" jdbcType="NVARCHAR" />
+    <result column="营业执照号码" property="营业执照号码" jdbcType="NVARCHAR" />
+    <result column="注册资本" property="注册资本" jdbcType="NVARCHAR" />
+    <result column="注册期限" property="注册期限" jdbcType="NVARCHAR" />
+    <result column="经营范围" property="经营范围" jdbcType="NVARCHAR" />
+    <result column="主营业务" property="主营业务" jdbcType="NVARCHAR" />
+    <result column="法人代表" property="法人代表" jdbcType="NVARCHAR" />
+    <result column="法人证件类型" property="法人证件类型" jdbcType="NVARCHAR" />
+    <result column="法人证件号码" property="法人证件号码" jdbcType="NVARCHAR" />
+    <result column="组织机构代码" property="组织机构代码" jdbcType="NVARCHAR" />
+    <result column="商户性质" property="商户性质" jdbcType="NVARCHAR" />
+    <result column="注册地址" property="注册地址" jdbcType="NVARCHAR" />
+    <result column="员工人数" property="员工人数" jdbcType="NVARCHAR" />
+    <result column="前一年营业额" property="前一年营业额" jdbcType="NVARCHAR" />
+    <result column="商户销售方式" property="商户销售方式" jdbcType="NVARCHAR" />
+    <result column="销售付款方式" property="销售付款方式" jdbcType="NVARCHAR" />
+    <result column="服务等级" property="服务等级" jdbcType="NVARCHAR" />
+    <result column="是否多个收单行" property="是否多个收单行" jdbcType="NVARCHAR" />
+    <result column="财务联系人姓名" property="财务联系人姓名" jdbcType="NVARCHAR" />
+    <result column="财务联系人电话" property="财务联系人电话" jdbcType="NVARCHAR" />
+    <result column="财务联系人传真" property="财务联系人传真" jdbcType="NVARCHAR" />
+    <result column="财务联系人电子信箱" property="财务联系人电子信箱" jdbcType="NVARCHAR" />
+    <result column="专业化服务机构" property="专业化服务机构" jdbcType="NVARCHAR" />
+    <result column="商户结算途径" property="商户结算途径" jdbcType="NVARCHAR" />
+    <result column="商户结算周期" property="商户结算周期" jdbcType="NVARCHAR" />
+    <result column="是否支持信用卡实时结算" property="是否支持信用卡实时结算" jdbcType="NVARCHAR" />
+    <result column="批结点" property="批结点" jdbcType="NVARCHAR" />
+    <result column="是否集团商户" property="是否集团商户" jdbcType="NVARCHAR" />
+    <result column="商户所属集团编码" property="商户所属集团编码" jdbcType="NVARCHAR" />
+    <result column="商户所属集团" property="商户所属集团" jdbcType="NVARCHAR" />
+    <result column="资金是否归集至集团商户" property="资金是否归集至集团商户" jdbcType="NVARCHAR" />
+    <result column="对账单发送方式" property="对账单发送方式" jdbcType="NVARCHAR" />
+    <result column="邮政编码" property="邮政编码" jdbcType="NVARCHAR" />
+    <result column="邮寄地址" property="邮寄地址" jdbcType="NVARCHAR" />
+    <result column="注销时间" property="注销时间" jdbcType="NVARCHAR" />
+    <result column="开通交易类型" property="开通交易类型" jdbcType="NVARCHAR" />
+    <result column="增值业务类型" property="增值业务类型" jdbcType="NVARCHAR" />
+    <result column="服务性质" property="服务性质" jdbcType="NVARCHAR" />
+    <result column="商户终端应用类型" property="商户终端应用类型" jdbcType="NVARCHAR" />
+    <result column="清算币种代码" property="清算币种代码" jdbcType="NVARCHAR" />
+    <result column="计费类型" property="计费类型" jdbcType="NVARCHAR" />
+    <result column="计费档次" property="计费档次" jdbcType="NVARCHAR" />
+    <result column="境内借记卡手续费收取模式" property="境内借记卡手续费收取模式" jdbcType="NVARCHAR" />
+    <result column="境内借记卡手续费分层信息" property="境内借记卡手续费分层信息" jdbcType="NVARCHAR" />
+    <result column="境内借贷记手续费是否一致" property="境内借贷记手续费是否一致" jdbcType="NVARCHAR" />
+    <result column="境内贷记卡手续费收取模式" property="境内贷记卡手续费收取模式" jdbcType="NVARCHAR" />
+    <result column="境内贷记卡手续费分层信息" property="境内贷记卡手续费分层信息" jdbcType="NVARCHAR" />
+    <result column="境外借记卡手续费收取模式" property="境外借记卡手续费收取模式" jdbcType="NVARCHAR" />
+    <result column="境外借记卡手续费分层信息" property="境外借记卡手续费分层信息" jdbcType="NVARCHAR" />
+    <result column="境外借贷记手续费是否一致" property="境外借贷记手续费是否一致" jdbcType="NVARCHAR" />
+    <result column="境外贷记卡手续费收取模式" property="境外贷记卡手续费收取模式" jdbcType="NVARCHAR" />
+    <result column="境外贷记卡手续费分层信息" property="境外贷记卡手续费分层信息" jdbcType="NVARCHAR" />
+    <result column="手续费模式" property="手续费模式" jdbcType="NVARCHAR" />
+    <result column="节假日合并结算" property="节假日合并结算" jdbcType="NVARCHAR" />
+    <result column="境内借记卡名义扣率和手续费是否一致" property="境内借记卡名义扣率和手续费是否一致" jdbcType="NVARCHAR" />
+    <result column="境内借记卡名义费率收取模式" property="境内借记卡名义费率收取模式" jdbcType="NVARCHAR" />
+    <result column="境内借记卡名义扣率分层信息" property="境内借记卡名义扣率分层信息" jdbcType="NVARCHAR" />
+    <result column="境内贷记卡名义扣率和手续费是否一致" property="境内贷记卡名义扣率和手续费是否一致" jdbcType="NVARCHAR" />
+    <result column="境内贷记卡名义费率收取模式" property="境内贷记卡名义费率收取模式" jdbcType="NVARCHAR" />
+    <result column="境内贷记卡名义扣率分层信息" property="境内贷记卡名义扣率分层信息" jdbcType="NVARCHAR" />
+    <result column="境外借记卡名义扣率和手续费是否一致" property="境外借记卡名义扣率和手续费是否一致" jdbcType="NVARCHAR" />
+    <result column="境外借记卡名义费率收取模式" property="境外借记卡名义费率收取模式" jdbcType="NVARCHAR" />
+    <result column="境外借记卡名义扣率分层信息" property="境外借记卡名义扣率分层信息" jdbcType="NVARCHAR" />
+    <result column="境外贷记卡名义扣率和手续费是否一致" property="境外贷记卡名义扣率和手续费是否一致" jdbcType="NVARCHAR" />
+    <result column="境外贷记卡名义费率收取模式" property="境外贷记卡名义费率收取模式" jdbcType="NVARCHAR" />
+    <result column="境外贷记卡名义扣率分层信息" property="境外贷记卡名义扣率分层信息" jdbcType="NVARCHAR" />
+    <result column="产品手续费收取模式" property="产品手续费收取模式" jdbcType="NVARCHAR" />
+    <result column="产品手续费分层信息" property="产品手续费分层信息" jdbcType="NVARCHAR" />
+    <result column="批结手续费" property="批结手续费" jdbcType="NVARCHAR" />
+    <result column="服务费收取模式" property="服务费收取模式" jdbcType="NVARCHAR" />
+    <result column="服务费类型" property="服务费类型" jdbcType="NVARCHAR" />
+    <result column="开始收取日期" property="开始收取日期" jdbcType="NVARCHAR" />
+    <result column="服务费收取周期" property="服务费收取周期" jdbcType="NVARCHAR" />
+    <result column="服务费收取方式" property="服务费收取方式" jdbcType="NVARCHAR" />
+    <result column="服务费分层信息" property="服务费分层信息" jdbcType="NVARCHAR" />
+    <result column="托收账户账号" property="托收账户账号" jdbcType="NVARCHAR" />
+    <result column="托收账户名称" property="托收账户名称" jdbcType="NVARCHAR" />
+    <result column="托收开户行名称" property="托收开户行名称" jdbcType="NVARCHAR" />
+    <result column="托收开户行支付系统行号" property="托收开户行支付系统行号" jdbcType="NVARCHAR" />
+    <result column="商户押金总计" property="商户押金总计" jdbcType="NVARCHAR" />
+    <result column="按商户收取押金" property="按商户收取押金" jdbcType="NVARCHAR" />
+    <result column="移动终端押金总额" property="移动终端押金总额" jdbcType="NVARCHAR" />
+    <result column="移动终端数量" property="移动终端数量" jdbcType="NVARCHAR" />
+    <result column="固定终端押金总额" property="固定终端押金总额" jdbcType="NVARCHAR" />
+    <result column="固定终端数量" property="固定终端数量" jdbcType="NVARCHAR" />
+    <result column="电话终端押金总额" property="电话终端押金总额" jdbcType="NVARCHAR" />
+    <result column="电话终端数量" property="电话终端数量" jdbcType="NVARCHAR" />
+    <result column="POS品牌需求" property="pos品牌需求" jdbcType="NVARCHAR" />
+    <result column="商户装机需求" property="商户装机需求" jdbcType="NVARCHAR" />
+    <result column="商户开通退货交易终端总量" property="商户开通退货交易终端总量" jdbcType="NVARCHAR" />
+    <result column="负债额" property="负债额" jdbcType="NVARCHAR" />
+    <result column="信用额度" property="信用额度" jdbcType="NVARCHAR" />
+    <result column="信用期" property="信用期" jdbcType="NVARCHAR" />
+    <result column="是否有债务逾期" property="是否有债务逾期" jdbcType="NVARCHAR" />
+    <result column="是否有内卡收单经验" property="是否有内卡收单经验" jdbcType="NVARCHAR" />
+    <result column="内卡开始收单日期" property="内卡开始收单日期" jdbcType="NVARCHAR" />
+    <result column="内卡收单机构" property="内卡收单机构" jdbcType="NVARCHAR" />
+    <result column="是否有外卡收单经验" property="是否有外卡收单经验" jdbcType="NVARCHAR" />
+    <result column="外卡收单日期" property="外卡收单日期" jdbcType="NVARCHAR" />
+    <result column="外卡收单机构" property="外卡收单机构" jdbcType="NVARCHAR" />
+    <result column="收银员业务知识和操作技能" property="收银员业务知识和操作技能" jdbcType="NVARCHAR" />
+    <result column="商户是否被列入中国银联或其它卡组织的可疑或风险商户名单" property="商户是否被列入中国银联或其它卡组织的可疑或风险商户名单" jdbcType="NVARCHAR" />
+    <result column="商户法人代表否被列入中国银联或其它卡组织的可疑或风险商户法人代表名单" property="商户法人代表否被列入中国银联或其它卡组织的可疑或风险商户法人代表名单" jdbcType="NVARCHAR" />
+    <result column="商户以前是否被其它收单机构拒绝" property="商户以前是否被其它收单机构拒绝" jdbcType="NVARCHAR" />
+    <result column="是否被列入中国银联或其它卡组织的不良持卡人名单" property="是否被列入中国银联或其它卡组织的不良持卡人名单" jdbcType="NVARCHAR" />
+    <result column="是否卷入法律诉讼" property="是否卷入法律诉讼" jdbcType="NVARCHAR" />
+    <result column="商户负责人是否卷入法律诉讼" property="商户负责人是否卷入法律诉讼" jdbcType="NVARCHAR" />
+    <result column="是否有被处罚记录" property="是否有被处罚记录" jdbcType="NVARCHAR" />
+    <result column="是否有逾期债务" property="是否有逾期债务" jdbcType="NVARCHAR" />
+    <result column="是否为重点监控商户" property="是否为重点监控商户" jdbcType="NVARCHAR" />
+    <result column="风险信息来源" property="风险信息来源" jdbcType="NVARCHAR" />
+    <result column="商户风险等级_初步意见" property="商户风险等级初步意见" jdbcType="NVARCHAR" />
+    <result column="是否检查验证商户的营业执照等证明文件_其营业执照等证明文件的复印件是否与原件一致" property="是否检查验证商户的营业执照等证明文件其营业执照等证明文件的复印件是否与原件一致" jdbcType="NVARCHAR" />
+    <result column="是否向商户所在地工商部门_联合征信机构进行企业信用状况查询" property="是否向商户所在地工商部门联合征信机构进行企业信用状况查询" jdbcType="NVARCHAR" />
+    <result column="是否对商户进行实地考察" property="是否对商户进行实地考察" jdbcType="NVARCHAR" />
+    <result column="商户经营范围与营业执照登记是否相符" property="商户经营范围与营业执照登记是否相符" jdbcType="NVARCHAR" />
+    <result column="是否有足够的存货来支持销售" property="是否有足够的存货来支持销售" jdbcType="NVARCHAR" />
+    <result column="商户经营状况" property="商户经营状况" jdbcType="NVARCHAR" />
+    <result column="是否向商户索取财务报表" property="是否向商户索取财务报表" jdbcType="NVARCHAR" />
+    <result column="考察人" property="考察人" jdbcType="NVARCHAR" />
+    <result column="考察日期" property="考察日期" jdbcType="NVARCHAR" />
+    <result column="商户监控类型" property="商户监控类型" jdbcType="NVARCHAR" />
+    <result column="商户免监控选项" property="商户免监控选项" jdbcType="NVARCHAR" />
+    <result column="商户营业地址" property="商户营业地址" jdbcType="NVARCHAR" />
+    <result column="商户联系人" property="商户联系人" jdbcType="NVARCHAR" />
+    <result column="商户审批通过日期" property="商户审批通过日期" jdbcType="NVARCHAR" />
+    <result column="商户联系人电话" property="商户联系人电话" jdbcType="NVARCHAR" />
+    <result column="商户更新日期" property="商户更新日期" jdbcType="NVARCHAR" />
+    <result column="商户管理状态" property="商户管理状态" jdbcType="NVARCHAR" />
+    <result column="商户状态" property="商户状态" jdbcType="NVARCHAR" />
+    <result column="分店编码" property="分店编码" jdbcType="NVARCHAR" />
+    <result column="分店名称" property="分店名称" jdbcType="NVARCHAR" />
+    <result column="分店营业地址" property="分店营业地址" jdbcType="NVARCHAR" />
+    <result column="分店签购单名称" property="分店签购单名称" jdbcType="NVARCHAR" />
+    <result column="分店营业面积" property="分店营业面积" jdbcType="NVARCHAR" />
+    <result column="分店经营地段" property="分店经营地段" jdbcType="NVARCHAR" />
+    <result column="分店经营区域" property="分店经营区域" jdbcType="NVARCHAR" />
+    <result column="分店营业用地性质" property="分店营业用地性质" jdbcType="NVARCHAR" />
+    <result column="分店开始营业日期" property="分店开始营业日期" jdbcType="NVARCHAR" />
+    <result column="分店开始营业时间" property="分店开始营业时间" jdbcType="NVARCHAR" />
+    <result column="分店关门结账时间" property="分店关门结账时间" jdbcType="NVARCHAR" />
+    <result column="分店联系人" property="分店联系人" jdbcType="NVARCHAR" />
+    <result column="分店联系人电话" property="分店联系人电话" jdbcType="NVARCHAR" />
+    <result column="分店传真" property="分店传真" jdbcType="NVARCHAR" />
+    <result column="分店电子邮箱地址" property="分店电子邮箱地址" jdbcType="NVARCHAR" />
+    <result column="分店日常维护人员" property="分店日常维护人员" jdbcType="NVARCHAR" />
+    <result column="分店日常维护人员手机" property="分店日常维护人员手机" jdbcType="NVARCHAR" />
+    <result column="分店固定终端数量" property="分店固定终端数量" jdbcType="NVARCHAR" />
+    <result column="分店电话终端数量" property="分店电话终端数量" jdbcType="NVARCHAR" />
+    <result column="分店移动终端数量" property="分店移动终端数量" jdbcType="NVARCHAR" />
+    <result column="分店结算设置" property="分店结算设置" jdbcType="NVARCHAR" />
+    <result column="分店资金划付用途" property="分店资金划付用途" jdbcType="NVARCHAR" />
+    <result column="分店审批通过日期" property="分店审批通过日期" jdbcType="NVARCHAR" />
+    <result column="分店更新时间" property="分店更新时间" jdbcType="NVARCHAR" />
+    <result column="分店注销时间" property="分店注销时间" jdbcType="NVARCHAR" />
+    <result column="分店联系人手机" property="分店联系人手机" jdbcType="NVARCHAR" />
+    <result column="分店邮寄地址类型" property="分店邮寄地址类型" jdbcType="NVARCHAR" />
+    <result column="分店邮寄地址" property="分店邮寄地址" jdbcType="NVARCHAR" />
+    <result column="分店状态" property="分店状态" jdbcType="NVARCHAR" />
+    <result column="分店管理状态" property="分店管理状态" jdbcType="NVARCHAR" />
+    <result column="新装机完成时间" property="新装机完成时间" jdbcType="NVARCHAR" />
+    <result column="门店代码" property="门店代码" jdbcType="NVARCHAR" />
+    <result column="门店结算账户名称" property="门店结算账户名称" jdbcType="NVARCHAR" />
+    <result column="门店结算账户账号" property="门店结算账户账号" jdbcType="NVARCHAR" />
+    <result column="门店结算开户行名称" property="门店结算开户行名称" jdbcType="NVARCHAR" />
+    <result column="门店结算开户行行号" property="门店结算开户行行号" jdbcType="NVARCHAR" />
+    <result column="终端编号" property="终端编号" jdbcType="NVARCHAR" />
+    <result column="终端类型" property="终端类型" jdbcType="NVARCHAR" />
+    <result column="终端装机需求" property="终端装机需求" jdbcType="NVARCHAR" />
+    <result column="POS产权方" property="pos产权方" jdbcType="NVARCHAR" />
+    <result column="产权机构号" property="产权机构号" jdbcType="NVARCHAR" />
+    <result column="押金标准" property="押金标准" jdbcType="NVARCHAR" />
+    <result column="终端品牌" property="终端品牌" jdbcType="NVARCHAR" />
+    <result column="终端型号" property="终端型号" jdbcType="NVARCHAR" />
+    <result column="终端条形码" property="终端条形码" jdbcType="NVARCHAR" />
+    <result column="主机序列号" property="主机序列号" jdbcType="NVARCHAR" />
+    <result column="终端安装位置" property="终端安装位置" jdbcType="NVARCHAR" />
+    <result column="业务受理接入方式" property="业务受理接入方式" jdbcType="NVARCHAR" />
+    <result column="呼出号码" property="呼出号码" jdbcType="NVARCHAR" />
+    <result column="终端增值业务类型" property="终端增值业务类型" jdbcType="NVARCHAR" />
+    <result column="终端开通交易类型" property="终端开通交易类型" jdbcType="NVARCHAR" />
+    <result column="终端安全模块号" property="终端安全模块号" jdbcType="NVARCHAR" />
+    <result column="终端应用类型" property="终端应用类型" jdbcType="NVARCHAR" />
+    <result column="银行卡应用商户编码" property="银行卡应用商户编码" jdbcType="NVARCHAR" />
+    <result column="是否开通信用卡" property="是否开通信用卡" jdbcType="NVARCHAR" />
+    <result column="开通信用额度" property="开通信用额度" jdbcType="NVARCHAR" />
+    <result column="银行卡其它信息" property="银行卡其它信息" jdbcType="NVARCHAR" />
+    <result column="终端审批通过日期" property="终端审批通过日期" jdbcType="NVARCHAR" />
+    <result column="终端注销日期" property="终端注销日期" jdbcType="NVARCHAR" />
+    <result column="终端管理状态" property="终端管理状态" jdbcType="NVARCHAR" />
+    <result column="终端状态" property="终端状态" jdbcType="NVARCHAR" />
+    <result column="更新时间" property="更新时间" jdbcType="NVARCHAR" />
+    <result column="装机完成时间" property="装机完成时间" jdbcType="NVARCHAR" />
+    <result column="借记卡控制方式" property="借记卡控制方式" jdbcType="NVARCHAR" />
+    <result column="借记卡单笔上限" property="借记卡单笔上限" jdbcType="NVARCHAR" />
+    <result column="借记卡单笔下限" property="借记卡单笔下限" jdbcType="NVARCHAR" />
+    <result column="借记卡累计限额" property="借记卡累计限额" jdbcType="NVARCHAR" />
+    <result column="贷记卡控制方式" property="贷记卡控制方式" jdbcType="NVARCHAR" />
+    <result column="贷记卡单笔上限" property="贷记卡单笔上限" jdbcType="NVARCHAR" />
+    <result column="贷记卡单笔下限" property="贷记卡单笔下限" jdbcType="NVARCHAR" />
+    <result column="贷记卡累计限额" property="贷记卡累计限额" jdbcType="NVARCHAR" />
+    <result column="外卡商户编码" property="外卡商户编码" jdbcType="NVARCHAR" />
+    <result column="美国运通商户编码" property="美国运通商户编码" jdbcType="NVARCHAR" />
+    <result column="外卡商户MCC" property="外卡商户mcc" jdbcType="NVARCHAR" />
+    <result column="外卡商户所在地区" property="外卡商户所在地区" jdbcType="NVARCHAR" />
+    <result column="外卡国家代码" property="外卡国家代码" jdbcType="NVARCHAR" />
+    <result column="外卡商户邮编" property="外卡商户邮编" jdbcType="NVARCHAR" />
+    <result column="外卡英文名称" property="外卡英文名称" jdbcType="NVARCHAR" />
+    <result column="外卡商户地址" property="外卡商户地址" jdbcType="NVARCHAR" />
+    <result column="VISA手续费" property="visa手续费" jdbcType="NVARCHAR" />
+    <result column="MASTER手续费" property="master手续费" jdbcType="NVARCHAR" />
+    <result column="JCB手续费" property="jcb手续费" jdbcType="NVARCHAR" />
+    <result column="AMEX手续费" property="amex手续费" jdbcType="NVARCHAR" />
+    <result column="DINER手续费" property="diner手续费" jdbcType="NVARCHAR" />
+    <result column="VISA_DCC手续费" property="visaDcc手续费" jdbcType="NVARCHAR" />
+    <result column="MASTER_DCC手续费" property="masterDcc手续费" jdbcType="NVARCHAR" />
+    <result column="外卡账号" property="外卡账号" jdbcType="NVARCHAR" />
+    <result column="外卡账户名称" property="外卡账户名称" jdbcType="NVARCHAR" />
+    <result column="外卡开户行名称" property="外卡开户行名称" jdbcType="NVARCHAR" />
+    <result column="外卡开户行行号" property="外卡开户行行号" jdbcType="NVARCHAR" />
+    <result column="是否开通外卡" property="是否开通外卡" jdbcType="NVARCHAR" />
+    <result column="统一商户编码" property="统一商户编码" jdbcType="NVARCHAR" />
+    <result column="营业执照开始日期" property="营业执照开始日期" jdbcType="NVARCHAR" />
+    <result column="营业执照结束日期" property="营业执照结束日期" jdbcType="NVARCHAR" />
+    <result column="税务登记号开始日期" property="税务登记号开始日期" jdbcType="NVARCHAR" />
+    <result column="税务登记号结束日期" property="税务登记号结束日期" jdbcType="NVARCHAR" />
+    <result column="组织机构代码开始日期" property="组织机构代码开始日期" jdbcType="NVARCHAR" />
+    <result column="组织机构代码结束日期" property="组织机构代码结束日期" jdbcType="NVARCHAR" />
+    <result column="法人证件有效期开始日期" property="法人证件有效期开始日期" jdbcType="NVARCHAR" />
+    <result column="法人证件有效期结束日期" property="法人证件有效期结束日期" jdbcType="NVARCHAR" />
+    <result column="免密功能" property="免密功能" jdbcType="NVARCHAR" />
+    <result column="免签功能" property="免签功能" jdbcType="NVARCHAR" />
+    <result column="免密限额" property="免密限额" jdbcType="NVARCHAR" />
+    <result column="免签限额" property="免签限额" jdbcType="NVARCHAR" />
+  </resultMap>
+    <delete id="deleteBatch" parameterType="java.util.List" >
+    delete from mcht_term_copy
+    where 商户编码 in
+    <foreach item="idItem" collection="list" open="(" separator="," close=")">
+     #{idItem,jdbcType=NVARCHAR}
+     </foreach>
+  </delete>
+  <insert id="insert" parameterType="com.oracle.entity.MerchantTerminal" >
+    insert into mcht_term_copy (商户编码, 分公司编码, 拓展机构, 
+      商户申请日期, 兴业商户结算账户账号, 兴业结算开户行支付系统行号, 
+      兴业商户结算开户行名称, 兴业商户结算账户名称, 商户所属分公司, 
+      商户所属地市业务部, 商户来源渠道, 发展人_推荐人, 
+      所属收单机构, 收单机构32域, 服务模式, 
+      商户编码前三位机构代码, 商户所在地区, 商户MCC42, 
+      商户类型_18域MCC, 套用商户类型原因, 酒店级别, 
+      是否按卡种结算, 商户结算账户名称, 商户结算账户账号, 
+      商户结算开户行名称, 商户结算开户行支付系统行号, 信用卡结算账户名称, 
+      信用卡结算账户账号, 信用卡结算开户行名称, 信用卡结算开户行支付系统行号, 
+      支出账户名称, 支出账户账号, 支出开户行名称, 
+      支出开户行支付系统行号, 借记卡账户名称, 借记卡账户账号, 
+      借记卡开户行名称, 借记卡开户行支付系统行号, 工商注册名称, 
+      营业名称, 英文名称, 英文简称, 
+      营业执照号码, 注册资本, 注册期限, 
+      经营范围, 主营业务, 法人代表, 
+      法人证件类型, 法人证件号码, 组织机构代码, 
+      商户性质, 注册地址, 员工人数, 
+      前一年营业额, 商户销售方式, 销售付款方式, 
+      服务等级, 是否多个收单行, 财务联系人姓名, 
+      财务联系人电话, 财务联系人传真, 财务联系人电子信箱, 
+      专业化服务机构, 商户结算途径, 商户结算周期, 
+      是否支持信用卡实时结算, 批结点, 是否集团商户, 
+      商户所属集团编码, 商户所属集团, 资金是否归集至集团商户, 
+      对账单发送方式, 邮政编码, 邮寄地址, 
+      注销时间, 开通交易类型, 增值业务类型, 
+      服务性质, 商户终端应用类型, 清算币种代码, 
+      计费类型, 计费档次, 境内借记卡手续费收取模式, 
+      境内借记卡手续费分层信息, 境内借贷记手续费是否一致, 境内贷记卡手续费收取模式, 
+      境内贷记卡手续费分层信息, 境外借记卡手续费收取模式, 境外借记卡手续费分层信息, 
+      境外借贷记手续费是否一致, 境外贷记卡手续费收取模式, 境外贷记卡手续费分层信息, 
+      手续费模式, 节假日合并结算, 境内借记卡名义扣率和手续费是否一致, 
+      境内借记卡名义费率收取模式, 境内借记卡名义扣率分层信息, 境内贷记卡名义扣率和手续费是否一致, 
+      境内贷记卡名义费率收取模式, 境内贷记卡名义扣率分层信息, 境外借记卡名义扣率和手续费是否一致, 
+      境外借记卡名义费率收取模式, 境外借记卡名义扣率分层信息, 境外贷记卡名义扣率和手续费是否一致, 
+      境外贷记卡名义费率收取模式, 境外贷记卡名义扣率分层信息, 产品手续费收取模式, 
+      产品手续费分层信息, 批结手续费, 服务费收取模式, 
+      服务费类型, 开始收取日期, 服务费收取周期, 
+      服务费收取方式, 服务费分层信息, 托收账户账号, 
+      托收账户名称, 托收开户行名称, 托收开户行支付系统行号, 
+      商户押金总计, 按商户收取押金, 移动终端押金总额, 
+      移动终端数量, 固定终端押金总额, 固定终端数量, 
+      电话终端押金总额, 电话终端数量, POS品牌需求, 
+      商户装机需求, 商户开通退货交易终端总量, 负债额, 
+      信用额度, 信用期, 是否有债务逾期, 
+      是否有内卡收单经验, 内卡开始收单日期, 内卡收单机构, 
+      是否有外卡收单经验, 外卡收单日期, 外卡收单机构, 
+      收银员业务知识和操作技能, 商户是否被列入中国银联或其它卡组织的可疑或风险商户名单, 
+      商户法人代表否被列入中国银联或其它卡组织的可疑或风险商户法人代表名单, 商户以前是否被其它收单机构拒绝, 
+      是否被列入中国银联或其它卡组织的不良持卡人名单, 是否卷入法律诉讼, 商户负责人是否卷入法律诉讼, 
+      是否有被处罚记录, 是否有逾期债务, 是否为重点监控商户, 
+      风险信息来源, 商户风险等级_初步意见, 是否检查验证商户的营业执照等证明文件_其营业执照等证明文件的复印件是否与原件一致, 
+      是否向商户所在地工商部门_联合征信机构进行企业信用状况查询, 是否对商户进行实地考察, 
+      商户经营范围与营业执照登记是否相符, 是否有足够的存货来支持销售, 商户经营状况, 
+      是否向商户索取财务报表, 考察人, 考察日期, 
+      商户监控类型, 商户免监控选项, 商户营业地址, 
+      商户联系人, 商户审批通过日期, 商户联系人电话, 
+      商户更新日期, 商户管理状态, 商户状态, 
+      分店编码, 分店名称, 分店营业地址, 
+      分店签购单名称, 分店营业面积, 分店经营地段, 
+      分店经营区域, 分店营业用地性质, 分店开始营业日期, 
+      分店开始营业时间, 分店关门结账时间, 分店联系人, 
+      分店联系人电话, 分店传真, 分店电子邮箱地址, 
+      分店日常维护人员, 分店日常维护人员手机, 分店固定终端数量, 
+      分店电话终端数量, 分店移动终端数量, 分店结算设置, 
+      分店资金划付用途, 分店审批通过日期, 分店更新时间, 
+      分店注销时间, 分店联系人手机, 分店邮寄地址类型, 
+      分店邮寄地址, 分店状态, 分店管理状态, 
+      新装机完成时间, 门店代码, 门店结算账户名称, 
+      门店结算账户账号, 门店结算开户行名称, 门店结算开户行行号, 
+      终端编号, 终端类型, 终端装机需求, 
+      POS产权方, 产权机构号, 押金标准, 
+      终端品牌, 终端型号, 终端条形码, 
+      主机序列号, 终端安装位置, 业务受理接入方式, 
+      呼出号码, 终端增值业务类型, 终端开通交易类型, 
+      终端安全模块号, 终端应用类型, 银行卡应用商户编码, 
+      是否开通信用卡, 开通信用额度, 银行卡其它信息, 
+      终端审批通过日期, 终端注销日期, 终端管理状态, 
+      终端状态, 更新时间, 装机完成时间, 
+      借记卡控制方式, 借记卡单笔上限, 借记卡单笔下限, 
+      借记卡累计限额, 贷记卡控制方式, 贷记卡单笔上限, 
+      贷记卡单笔下限, 贷记卡累计限额, 外卡商户编码, 
+      美国运通商户编码, 外卡商户MCC, 外卡商户所在地区, 
+      外卡国家代码, 外卡商户邮编, 外卡英文名称, 
+      外卡商户地址, VISA手续费, MASTER手续费, 
+      JCB手续费, AMEX手续费, DINER手续费, 
+      VISA_DCC手续费, MASTER_DCC手续费, 外卡账号, 
+      外卡账户名称, 外卡开户行名称, 外卡开户行行号, 
+      是否开通外卡, 统一商户编码, 营业执照开始日期, 
+      营业执照结束日期, 税务登记号开始日期, 税务登记号结束日期, 
+      组织机构代码开始日期, 组织机构代码结束日期, 法人证件有效期开始日期, 
+      法人证件有效期结束日期, 免密功能, 免签功能, 
+      免密限额, 免签限额)
+    values 
+    (#{商户编码,jdbcType=NVARCHAR}, #{分公司编码,jdbcType=NVARCHAR}, #{拓展机构,jdbcType=NVARCHAR}, 
+      #{商户申请日期,jdbcType=NVARCHAR}, #{兴业商户结算账户账号,jdbcType=NVARCHAR}, #{兴业结算开户行支付系统行号,jdbcType=NVARCHAR}, 
+      #{兴业商户结算开户行名称,jdbcType=NVARCHAR}, #{兴业商户结算账户名称,jdbcType=NVARCHAR}, #{商户所属分公司,jdbcType=NVARCHAR}, 
+      #{商户所属地市业务部,jdbcType=NVARCHAR}, #{商户来源渠道,jdbcType=NVARCHAR}, #{发展人推荐人,jdbcType=NVARCHAR}, 
+      #{所属收单机构,jdbcType=NVARCHAR}, #{收单机构32域,jdbcType=NVARCHAR}, #{服务模式,jdbcType=NVARCHAR}, 
+      #{商户编码前三位机构代码,jdbcType=NVARCHAR}, #{商户所在地区,jdbcType=NVARCHAR}, #{商户mcc42,jdbcType=NVARCHAR}, 
+      #{商户类型18域mcc,jdbcType=NVARCHAR}, #{套用商户类型原因,jdbcType=NVARCHAR}, #{酒店级别,jdbcType=NVARCHAR}, 
+      #{是否按卡种结算,jdbcType=NVARCHAR}, #{商户结算账户名称,jdbcType=NVARCHAR}, #{商户结算账户账号,jdbcType=NVARCHAR}, 
+      #{商户结算开户行名称,jdbcType=NVARCHAR}, #{商户结算开户行支付系统行号,jdbcType=NVARCHAR}, #{信用卡结算账户名称,jdbcType=NVARCHAR}, 
+      #{信用卡结算账户账号,jdbcType=NVARCHAR}, #{信用卡结算开户行名称,jdbcType=NVARCHAR}, #{信用卡结算开户行支付系统行号,jdbcType=NVARCHAR}, 
+      #{支出账户名称,jdbcType=NVARCHAR}, #{支出账户账号,jdbcType=NVARCHAR}, #{支出开户行名称,jdbcType=NVARCHAR}, 
+      #{支出开户行支付系统行号,jdbcType=NVARCHAR}, #{借记卡账户名称,jdbcType=NVARCHAR}, #{借记卡账户账号,jdbcType=NVARCHAR}, 
+      #{借记卡开户行名称,jdbcType=NVARCHAR}, #{借记卡开户行支付系统行号,jdbcType=NVARCHAR}, #{工商注册名称,jdbcType=NVARCHAR}, 
+      #{营业名称,jdbcType=NVARCHAR}, #{英文名称,jdbcType=NVARCHAR}, #{英文简称,jdbcType=NVARCHAR}, 
+      #{营业执照号码,jdbcType=NVARCHAR}, #{注册资本,jdbcType=NVARCHAR}, #{注册期限,jdbcType=NVARCHAR}, 
+      #{经营范围,jdbcType=NVARCHAR}, #{主营业务,jdbcType=NVARCHAR}, #{法人代表,jdbcType=NVARCHAR}, 
+      #{法人证件类型,jdbcType=NVARCHAR}, #{法人证件号码,jdbcType=NVARCHAR}, #{组织机构代码,jdbcType=NVARCHAR}, 
+      #{商户性质,jdbcType=NVARCHAR}, #{注册地址,jdbcType=NVARCHAR}, #{员工人数,jdbcType=NVARCHAR}, 
+      #{前一年营业额,jdbcType=NVARCHAR}, #{商户销售方式,jdbcType=NVARCHAR}, #{销售付款方式,jdbcType=NVARCHAR}, 
+      #{服务等级,jdbcType=NVARCHAR}, #{是否多个收单行,jdbcType=NVARCHAR}, #{财务联系人姓名,jdbcType=NVARCHAR}, 
+      #{财务联系人电话,jdbcType=NVARCHAR}, #{财务联系人传真,jdbcType=NVARCHAR}, #{财务联系人电子信箱,jdbcType=NVARCHAR}, 
+      #{专业化服务机构,jdbcType=NVARCHAR}, #{商户结算途径,jdbcType=NVARCHAR}, #{商户结算周期,jdbcType=NVARCHAR}, 
+      #{是否支持信用卡实时结算,jdbcType=NVARCHAR}, #{批结点,jdbcType=NVARCHAR}, #{是否集团商户,jdbcType=NVARCHAR}, 
+      #{商户所属集团编码,jdbcType=NVARCHAR}, #{商户所属集团,jdbcType=NVARCHAR}, #{资金是否归集至集团商户,jdbcType=NVARCHAR}, 
+      #{对账单发送方式,jdbcType=NVARCHAR}, #{邮政编码,jdbcType=NVARCHAR}, #{邮寄地址,jdbcType=NVARCHAR}, 
+      #{注销时间,jdbcType=NVARCHAR}, #{开通交易类型,jdbcType=NVARCHAR}, #{增值业务类型,jdbcType=NVARCHAR}, 
+      #{服务性质,jdbcType=NVARCHAR}, #{商户终端应用类型,jdbcType=NVARCHAR}, #{清算币种代码,jdbcType=NVARCHAR}, 
+      #{计费类型,jdbcType=NVARCHAR}, #{计费档次,jdbcType=NVARCHAR}, #{境内借记卡手续费收取模式,jdbcType=NVARCHAR}, 
+      #{境内借记卡手续费分层信息,jdbcType=NVARCHAR}, #{境内借贷记手续费是否一致,jdbcType=NVARCHAR}, #{境内贷记卡手续费收取模式,jdbcType=NVARCHAR}, 
+      #{境内贷记卡手续费分层信息,jdbcType=NVARCHAR}, #{境外借记卡手续费收取模式,jdbcType=NVARCHAR}, #{境外借记卡手续费分层信息,jdbcType=NVARCHAR}, 
+      #{境外借贷记手续费是否一致,jdbcType=NVARCHAR}, #{境外贷记卡手续费收取模式,jdbcType=NVARCHAR}, #{境外贷记卡手续费分层信息,jdbcType=NVARCHAR}, 
+      #{手续费模式,jdbcType=NVARCHAR}, #{节假日合并结算,jdbcType=NVARCHAR}, #{境内借记卡名义扣率和手续费是否一致,jdbcType=NVARCHAR}, 
+      #{境内借记卡名义费率收取模式,jdbcType=NVARCHAR}, #{境内借记卡名义扣率分层信息,jdbcType=NVARCHAR}, #{境内贷记卡名义扣率和手续费是否一致,jdbcType=NVARCHAR}, 
+      #{境内贷记卡名义费率收取模式,jdbcType=NVARCHAR}, #{境内贷记卡名义扣率分层信息,jdbcType=NVARCHAR}, #{境外借记卡名义扣率和手续费是否一致,jdbcType=NVARCHAR}, 
+      #{境外借记卡名义费率收取模式,jdbcType=NVARCHAR}, #{境外借记卡名义扣率分层信息,jdbcType=NVARCHAR}, #{境外贷记卡名义扣率和手续费是否一致,jdbcType=NVARCHAR}, 
+      #{境外贷记卡名义费率收取模式,jdbcType=NVARCHAR}, #{境外贷记卡名义扣率分层信息,jdbcType=NVARCHAR}, #{产品手续费收取模式,jdbcType=NVARCHAR}, 
+      #{产品手续费分层信息,jdbcType=NVARCHAR}, #{批结手续费,jdbcType=NVARCHAR}, #{服务费收取模式,jdbcType=NVARCHAR}, 
+      #{服务费类型,jdbcType=NVARCHAR}, #{开始收取日期,jdbcType=NVARCHAR}, #{服务费收取周期,jdbcType=NVARCHAR}, 
+      #{服务费收取方式,jdbcType=NVARCHAR}, #{服务费分层信息,jdbcType=NVARCHAR}, #{托收账户账号,jdbcType=NVARCHAR}, 
+      #{托收账户名称,jdbcType=NVARCHAR}, #{托收开户行名称,jdbcType=NVARCHAR}, #{托收开户行支付系统行号,jdbcType=NVARCHAR}, 
+      #{商户押金总计,jdbcType=NVARCHAR}, #{按商户收取押金,jdbcType=NVARCHAR}, #{移动终端押金总额,jdbcType=NVARCHAR}, 
+      #{移动终端数量,jdbcType=NVARCHAR}, #{固定终端押金总额,jdbcType=NVARCHAR}, #{固定终端数量,jdbcType=NVARCHAR}, 
+      #{电话终端押金总额,jdbcType=NVARCHAR}, #{电话终端数量,jdbcType=NVARCHAR}, #{pos品牌需求,jdbcType=NVARCHAR}, 
+      #{商户装机需求,jdbcType=NVARCHAR}, #{商户开通退货交易终端总量,jdbcType=NVARCHAR}, #{负债额,jdbcType=NVARCHAR}, 
+      #{信用额度,jdbcType=NVARCHAR}, #{信用期,jdbcType=NVARCHAR}, #{是否有债务逾期,jdbcType=NVARCHAR}, 
+      #{是否有内卡收单经验,jdbcType=NVARCHAR}, #{内卡开始收单日期,jdbcType=NVARCHAR}, #{内卡收单机构,jdbcType=NVARCHAR}, 
+      #{是否有外卡收单经验,jdbcType=NVARCHAR}, #{外卡收单日期,jdbcType=NVARCHAR}, #{外卡收单机构,jdbcType=NVARCHAR}, 
+      #{收银员业务知识和操作技能,jdbcType=NVARCHAR}, #{商户是否被列入中国银联或其它卡组织的可疑或风险商户名单,jdbcType=NVARCHAR}, 
+      #{商户法人代表否被列入中国银联或其它卡组织的可疑或风险商户法人代表名单,jdbcType=NVARCHAR}, #{商户以前是否被其它收单机构拒绝,jdbcType=NVARCHAR}, 
+      #{是否被列入中国银联或其它卡组织的不良持卡人名单,jdbcType=NVARCHAR}, #{是否卷入法律诉讼,jdbcType=NVARCHAR}, #{商户负责人是否卷入法律诉讼,jdbcType=NVARCHAR}, 
+      #{是否有被处罚记录,jdbcType=NVARCHAR}, #{是否有逾期债务,jdbcType=NVARCHAR}, #{是否为重点监控商户,jdbcType=NVARCHAR}, 
+      #{风险信息来源,jdbcType=NVARCHAR}, #{商户风险等级初步意见,jdbcType=NVARCHAR}, #{是否检查验证商户的营业执照等证明文件其营业执照等证明文件的复印件是否与原件一致,jdbcType=NVARCHAR}, 
+      #{是否向商户所在地工商部门联合征信机构进行企业信用状况查询,jdbcType=NVARCHAR}, #{是否对商户进行实地考察,jdbcType=NVARCHAR}, 
+      #{商户经营范围与营业执照登记是否相符,jdbcType=NVARCHAR}, #{是否有足够的存货来支持销售,jdbcType=NVARCHAR}, #{商户经营状况,jdbcType=NVARCHAR}, 
+      #{是否向商户索取财务报表,jdbcType=NVARCHAR}, #{考察人,jdbcType=NVARCHAR}, #{考察日期,jdbcType=NVARCHAR}, 
+      #{商户监控类型,jdbcType=NVARCHAR}, #{商户免监控选项,jdbcType=NVARCHAR}, #{商户营业地址,jdbcType=NVARCHAR}, 
+      #{商户联系人,jdbcType=NVARCHAR}, #{商户审批通过日期,jdbcType=NVARCHAR}, #{商户联系人电话,jdbcType=NVARCHAR}, 
+      #{商户更新日期,jdbcType=NVARCHAR}, #{商户管理状态,jdbcType=NVARCHAR}, #{商户状态,jdbcType=NVARCHAR}, 
+      #{分店编码,jdbcType=NVARCHAR}, #{分店名称,jdbcType=NVARCHAR}, #{分店营业地址,jdbcType=NVARCHAR}, 
+      #{分店签购单名称,jdbcType=NVARCHAR}, #{分店营业面积,jdbcType=NVARCHAR}, #{分店经营地段,jdbcType=NVARCHAR}, 
+      #{分店经营区域,jdbcType=NVARCHAR}, #{分店营业用地性质,jdbcType=NVARCHAR}, #{分店开始营业日期,jdbcType=NVARCHAR}, 
+      #{分店开始营业时间,jdbcType=NVARCHAR}, #{分店关门结账时间,jdbcType=NVARCHAR}, #{分店联系人,jdbcType=NVARCHAR}, 
+      #{分店联系人电话,jdbcType=NVARCHAR}, #{分店传真,jdbcType=NVARCHAR}, #{分店电子邮箱地址,jdbcType=NVARCHAR}, 
+      #{分店日常维护人员,jdbcType=NVARCHAR}, #{分店日常维护人员手机,jdbcType=NVARCHAR}, #{分店固定终端数量,jdbcType=NVARCHAR}, 
+      #{分店电话终端数量,jdbcType=NVARCHAR}, #{分店移动终端数量,jdbcType=NVARCHAR}, #{分店结算设置,jdbcType=NVARCHAR}, 
+      #{分店资金划付用途,jdbcType=NVARCHAR}, #{分店审批通过日期,jdbcType=NVARCHAR}, #{分店更新时间,jdbcType=NVARCHAR}, 
+      #{分店注销时间,jdbcType=NVARCHAR}, #{分店联系人手机,jdbcType=NVARCHAR}, #{分店邮寄地址类型,jdbcType=NVARCHAR}, 
+      #{分店邮寄地址,jdbcType=NVARCHAR}, #{分店状态,jdbcType=NVARCHAR}, #{分店管理状态,jdbcType=NVARCHAR}, 
+      #{新装机完成时间,jdbcType=NVARCHAR}, #{门店代码,jdbcType=NVARCHAR}, #{门店结算账户名称,jdbcType=NVARCHAR}, 
+      #{门店结算账户账号,jdbcType=NVARCHAR}, #{门店结算开户行名称,jdbcType=NVARCHAR}, #{门店结算开户行行号,jdbcType=NVARCHAR}, 
+      #{终端编号,jdbcType=NVARCHAR}, #{终端类型,jdbcType=NVARCHAR}, #{终端装机需求,jdbcType=NVARCHAR}, 
+      #{pos产权方,jdbcType=NVARCHAR}, #{产权机构号,jdbcType=NVARCHAR}, #{押金标准,jdbcType=NVARCHAR}, 
+      #{终端品牌,jdbcType=NVARCHAR}, #{终端型号,jdbcType=NVARCHAR}, #{终端条形码,jdbcType=NVARCHAR}, 
+      #{主机序列号,jdbcType=NVARCHAR}, #{终端安装位置,jdbcType=NVARCHAR}, #{业务受理接入方式,jdbcType=NVARCHAR}, 
+      #{呼出号码,jdbcType=NVARCHAR}, #{终端增值业务类型,jdbcType=NVARCHAR}, #{终端开通交易类型,jdbcType=NVARCHAR}, 
+      #{终端安全模块号,jdbcType=NVARCHAR}, #{终端应用类型,jdbcType=NVARCHAR}, #{银行卡应用商户编码,jdbcType=NVARCHAR}, 
+      #{是否开通信用卡,jdbcType=NVARCHAR}, #{开通信用额度,jdbcType=NVARCHAR}, #{银行卡其它信息,jdbcType=NVARCHAR}, 
+      #{终端审批通过日期,jdbcType=NVARCHAR}, #{终端注销日期,jdbcType=NVARCHAR}, #{终端管理状态,jdbcType=NVARCHAR}, 
+      #{终端状态,jdbcType=NVARCHAR}, #{更新时间,jdbcType=NVARCHAR}, #{装机完成时间,jdbcType=NVARCHAR}, 
+      #{借记卡控制方式,jdbcType=NVARCHAR}, #{借记卡单笔上限,jdbcType=NVARCHAR}, #{借记卡单笔下限,jdbcType=NVARCHAR}, 
+      #{借记卡累计限额,jdbcType=NVARCHAR}, #{贷记卡控制方式,jdbcType=NVARCHAR}, #{贷记卡单笔上限,jdbcType=NVARCHAR}, 
+      #{贷记卡单笔下限,jdbcType=NVARCHAR}, #{贷记卡累计限额,jdbcType=NVARCHAR}, #{外卡商户编码,jdbcType=NVARCHAR}, 
+      #{美国运通商户编码,jdbcType=NVARCHAR}, #{外卡商户mcc,jdbcType=NVARCHAR}, #{外卡商户所在地区,jdbcType=NVARCHAR}, 
+      #{外卡国家代码,jdbcType=NVARCHAR}, #{外卡商户邮编,jdbcType=NVARCHAR}, #{外卡英文名称,jdbcType=NVARCHAR}, 
+      #{外卡商户地址,jdbcType=NVARCHAR}, #{visa手续费,jdbcType=NVARCHAR}, #{master手续费,jdbcType=NVARCHAR}, 
+      #{jcb手续费,jdbcType=NVARCHAR}, #{amex手续费,jdbcType=NVARCHAR}, #{diner手续费,jdbcType=NVARCHAR}, 
+      #{visaDcc手续费,jdbcType=NVARCHAR}, #{masterDcc手续费,jdbcType=NVARCHAR}, #{外卡账号,jdbcType=NVARCHAR}, 
+      #{外卡账户名称,jdbcType=NVARCHAR}, #{外卡开户行名称,jdbcType=NVARCHAR}, #{外卡开户行行号,jdbcType=NVARCHAR}, 
+      #{是否开通外卡,jdbcType=NVARCHAR}, #{统一商户编码,jdbcType=NVARCHAR}, #{营业执照开始日期,jdbcType=NVARCHAR}, 
+      #{营业执照结束日期,jdbcType=NVARCHAR}, #{税务登记号开始日期,jdbcType=NVARCHAR}, #{税务登记号结束日期,jdbcType=NVARCHAR}, 
+      #{组织机构代码开始日期,jdbcType=NVARCHAR}, #{组织机构代码结束日期,jdbcType=NVARCHAR}, #{法人证件有效期开始日期,jdbcType=NVARCHAR}, 
+      #{法人证件有效期结束日期,jdbcType=NVARCHAR}, #{免密功能,jdbcType=NVARCHAR}, #{免签功能,jdbcType=NVARCHAR}, 
+      #{免密限额,jdbcType=NVARCHAR}, #{免签限额,jdbcType=NVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.oracle.entity.MerchantTerminal" >
+    insert into mcht_term_copy
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="商户编码 != null" >
+        商户编码,
+      </if>
+      <if test="分公司编码 != null" >
+        分公司编码,
+      </if>
+      <if test="拓展机构 != null" >
+        拓展机构,
+      </if>
+      <if test="商户申请日期 != null" >
+        商户申请日期,
+      </if>
+      <if test="兴业商户结算账户账号 != null" >
+        兴业商户结算账户账号,
+      </if>
+      <if test="兴业结算开户行支付系统行号 != null" >
+        兴业结算开户行支付系统行号,
+      </if>
+      <if test="兴业商户结算开户行名称 != null" >
+        兴业商户结算开户行名称,
+      </if>
+      <if test="兴业商户结算账户名称 != null" >
+        兴业商户结算账户名称,
+      </if>
+      <if test="商户所属分公司 != null" >
+        商户所属分公司,
+      </if>
+      <if test="商户所属地市业务部 != null" >
+        商户所属地市业务部,
+      </if>
+      <if test="商户来源渠道 != null" >
+        商户来源渠道,
+      </if>
+      <if test="发展人推荐人 != null" >
+        发展人_推荐人,
+      </if>
+      <if test="所属收单机构 != null" >
+        所属收单机构,
+      </if>
+      <if test="收单机构32域 != null" >
+        收单机构32域,
+      </if>
+      <if test="服务模式 != null" >
+        服务模式,
+      </if>
+      <if test="商户编码前三位机构代码 != null" >
+        商户编码前三位机构代码,
+      </if>
+      <if test="商户所在地区 != null" >
+        商户所在地区,
+      </if>
+      <if test="商户mcc42 != null" >
+        商户MCC42,
+      </if>
+      <if test="商户类型18域mcc != null" >
+        商户类型_18域MCC,
+      </if>
+      <if test="套用商户类型原因 != null" >
+        套用商户类型原因,
+      </if>
+      <if test="酒店级别 != null" >
+        酒店级别,
+      </if>
+      <if test="是否按卡种结算 != null" >
+        是否按卡种结算,
+      </if>
+      <if test="商户结算账户名称 != null" >
+        商户结算账户名称,
+      </if>
+      <if test="商户结算账户账号 != null" >
+        商户结算账户账号,
+      </if>
+      <if test="商户结算开户行名称 != null" >
+        商户结算开户行名称,
+      </if>
+      <if test="商户结算开户行支付系统行号 != null" >
+        商户结算开户行支付系统行号,
+      </if>
+      <if test="信用卡结算账户名称 != null" >
+        信用卡结算账户名称,
+      </if>
+      <if test="信用卡结算账户账号 != null" >
+        信用卡结算账户账号,
+      </if>
+      <if test="信用卡结算开户行名称 != null" >
+        信用卡结算开户行名称,
+      </if>
+      <if test="信用卡结算开户行支付系统行号 != null" >
+        信用卡结算开户行支付系统行号,
+      </if>
+      <if test="支出账户名称 != null" >
+        支出账户名称,
+      </if>
+      <if test="支出账户账号 != null" >
+        支出账户账号,
+      </if>
+      <if test="支出开户行名称 != null" >
+        支出开户行名称,
+      </if>
+      <if test="支出开户行支付系统行号 != null" >
+        支出开户行支付系统行号,
+      </if>
+      <if test="借记卡账户名称 != null" >
+        借记卡账户名称,
+      </if>
+      <if test="借记卡账户账号 != null" >
+        借记卡账户账号,
+      </if>
+      <if test="借记卡开户行名称 != null" >
+        借记卡开户行名称,
+      </if>
+      <if test="借记卡开户行支付系统行号 != null" >
+        借记卡开户行支付系统行号,
+      </if>
+      <if test="工商注册名称 != null" >
+        工商注册名称,
+      </if>
+      <if test="营业名称 != null" >
+        营业名称,
+      </if>
+      <if test="英文名称 != null" >
+        英文名称,
+      </if>
+      <if test="英文简称 != null" >
+        英文简称,
+      </if>
+      <if test="营业执照号码 != null" >
+        营业执照号码,
+      </if>
+      <if test="注册资本 != null" >
+        注册资本,
+      </if>
+      <if test="注册期限 != null" >
+        注册期限,
+      </if>
+      <if test="经营范围 != null" >
+        经营范围,
+      </if>
+      <if test="主营业务 != null" >
+        主营业务,
+      </if>
+      <if test="法人代表 != null" >
+        法人代表,
+      </if>
+      <if test="法人证件类型 != null" >
+        法人证件类型,
+      </if>
+      <if test="法人证件号码 != null" >
+        法人证件号码,
+      </if>
+      <if test="组织机构代码 != null" >
+        组织机构代码,
+      </if>
+      <if test="商户性质 != null" >
+        商户性质,
+      </if>
+      <if test="注册地址 != null" >
+        注册地址,
+      </if>
+      <if test="员工人数 != null" >
+        员工人数,
+      </if>
+      <if test="前一年营业额 != null" >
+        前一年营业额,
+      </if>
+      <if test="商户销售方式 != null" >
+        商户销售方式,
+      </if>
+      <if test="销售付款方式 != null" >
+        销售付款方式,
+      </if>
+      <if test="服务等级 != null" >
+        服务等级,
+      </if>
+      <if test="是否多个收单行 != null" >
+        是否多个收单行,
+      </if>
+      <if test="财务联系人姓名 != null" >
+        财务联系人姓名,
+      </if>
+      <if test="财务联系人电话 != null" >
+        财务联系人电话,
+      </if>
+      <if test="财务联系人传真 != null" >
+        财务联系人传真,
+      </if>
+      <if test="财务联系人电子信箱 != null" >
+        财务联系人电子信箱,
+      </if>
+      <if test="专业化服务机构 != null" >
+        专业化服务机构,
+      </if>
+      <if test="商户结算途径 != null" >
+        商户结算途径,
+      </if>
+      <if test="商户结算周期 != null" >
+        商户结算周期,
+      </if>
+      <if test="是否支持信用卡实时结算 != null" >
+        是否支持信用卡实时结算,
+      </if>
+      <if test="批结点 != null" >
+        批结点,
+      </if>
+      <if test="是否集团商户 != null" >
+        是否集团商户,
+      </if>
+      <if test="商户所属集团编码 != null" >
+        商户所属集团编码,
+      </if>
+      <if test="商户所属集团 != null" >
+        商户所属集团,
+      </if>
+      <if test="资金是否归集至集团商户 != null" >
+        资金是否归集至集团商户,
+      </if>
+      <if test="对账单发送方式 != null" >
+        对账单发送方式,
+      </if>
+      <if test="邮政编码 != null" >
+        邮政编码,
+      </if>
+      <if test="邮寄地址 != null" >
+        邮寄地址,
+      </if>
+      <if test="注销时间 != null" >
+        注销时间,
+      </if>
+      <if test="开通交易类型 != null" >
+        开通交易类型,
+      </if>
+      <if test="增值业务类型 != null" >
+        增值业务类型,
+      </if>
+      <if test="服务性质 != null" >
+        服务性质,
+      </if>
+      <if test="商户终端应用类型 != null" >
+        商户终端应用类型,
+      </if>
+      <if test="清算币种代码 != null" >
+        清算币种代码,
+      </if>
+      <if test="计费类型 != null" >
+        计费类型,
+      </if>
+      <if test="计费档次 != null" >
+        计费档次,
+      </if>
+      <if test="境内借记卡手续费收取模式 != null" >
+        境内借记卡手续费收取模式,
+      </if>
+      <if test="境内借记卡手续费分层信息 != null" >
+        境内借记卡手续费分层信息,
+      </if>
+      <if test="境内借贷记手续费是否一致 != null" >
+        境内借贷记手续费是否一致,
+      </if>
+      <if test="境内贷记卡手续费收取模式 != null" >
+        境内贷记卡手续费收取模式,
+      </if>
+      <if test="境内贷记卡手续费分层信息 != null" >
+        境内贷记卡手续费分层信息,
+      </if>
+      <if test="境外借记卡手续费收取模式 != null" >
+        境外借记卡手续费收取模式,
+      </if>
+      <if test="境外借记卡手续费分层信息 != null" >
+        境外借记卡手续费分层信息,
+      </if>
+      <if test="境外借贷记手续费是否一致 != null" >
+        境外借贷记手续费是否一致,
+      </if>
+      <if test="境外贷记卡手续费收取模式 != null" >
+        境外贷记卡手续费收取模式,
+      </if>
+      <if test="境外贷记卡手续费分层信息 != null" >
+        境外贷记卡手续费分层信息,
+      </if>
+      <if test="手续费模式 != null" >
+        手续费模式,
+      </if>
+      <if test="节假日合并结算 != null" >
+        节假日合并结算,
+      </if>
+      <if test="境内借记卡名义扣率和手续费是否一致 != null" >
+        境内借记卡名义扣率和手续费是否一致,
+      </if>
+      <if test="境内借记卡名义费率收取模式 != null" >
+        境内借记卡名义费率收取模式,
+      </if>
+      <if test="境内借记卡名义扣率分层信息 != null" >
+        境内借记卡名义扣率分层信息,
+      </if>
+      <if test="境内贷记卡名义扣率和手续费是否一致 != null" >
+        境内贷记卡名义扣率和手续费是否一致,
+      </if>
+      <if test="境内贷记卡名义费率收取模式 != null" >
+        境内贷记卡名义费率收取模式,
+      </if>
+      <if test="境内贷记卡名义扣率分层信息 != null" >
+        境内贷记卡名义扣率分层信息,
+      </if>
+      <if test="境外借记卡名义扣率和手续费是否一致 != null" >
+        境外借记卡名义扣率和手续费是否一致,
+      </if>
+      <if test="境外借记卡名义费率收取模式 != null" >
+        境外借记卡名义费率收取模式,
+      </if>
+      <if test="境外借记卡名义扣率分层信息 != null" >
+        境外借记卡名义扣率分层信息,
+      </if>
+      <if test="境外贷记卡名义扣率和手续费是否一致 != null" >
+        境外贷记卡名义扣率和手续费是否一致,
+      </if>
+      <if test="境外贷记卡名义费率收取模式 != null" >
+        境外贷记卡名义费率收取模式,
+      </if>
+      <if test="境外贷记卡名义扣率分层信息 != null" >
+        境外贷记卡名义扣率分层信息,
+      </if>
+      <if test="产品手续费收取模式 != null" >
+        产品手续费收取模式,
+      </if>
+      <if test="产品手续费分层信息 != null" >
+        产品手续费分层信息,
+      </if>
+      <if test="批结手续费 != null" >
+        批结手续费,
+      </if>
+      <if test="服务费收取模式 != null" >
+        服务费收取模式,
+      </if>
+      <if test="服务费类型 != null" >
+        服务费类型,
+      </if>
+      <if test="开始收取日期 != null" >
+        开始收取日期,
+      </if>
+      <if test="服务费收取周期 != null" >
+        服务费收取周期,
+      </if>
+      <if test="服务费收取方式 != null" >
+        服务费收取方式,
+      </if>
+      <if test="服务费分层信息 != null" >
+        服务费分层信息,
+      </if>
+      <if test="托收账户账号 != null" >
+        托收账户账号,
+      </if>
+      <if test="托收账户名称 != null" >
+        托收账户名称,
+      </if>
+      <if test="托收开户行名称 != null" >
+        托收开户行名称,
+      </if>
+      <if test="托收开户行支付系统行号 != null" >
+        托收开户行支付系统行号,
+      </if>
+      <if test="商户押金总计 != null" >
+        商户押金总计,
+      </if>
+      <if test="按商户收取押金 != null" >
+        按商户收取押金,
+      </if>
+      <if test="移动终端押金总额 != null" >
+        移动终端押金总额,
+      </if>
+      <if test="移动终端数量 != null" >
+        移动终端数量,
+      </if>
+      <if test="固定终端押金总额 != null" >
+        固定终端押金总额,
+      </if>
+      <if test="固定终端数量 != null" >
+        固定终端数量,
+      </if>
+      <if test="电话终端押金总额 != null" >
+        电话终端押金总额,
+      </if>
+      <if test="电话终端数量 != null" >
+        电话终端数量,
+      </if>
+      <if test="pos品牌需求 != null" >
+        POS品牌需求,
+      </if>
+      <if test="商户装机需求 != null" >
+        商户装机需求,
+      </if>
+      <if test="商户开通退货交易终端总量 != null" >
+        商户开通退货交易终端总量,
+      </if>
+      <if test="负债额 != null" >
+        负债额,
+      </if>
+      <if test="信用额度 != null" >
+        信用额度,
+      </if>
+      <if test="信用期 != null" >
+        信用期,
+      </if>
+      <if test="是否有债务逾期 != null" >
+        是否有债务逾期,
+      </if>
+      <if test="是否有内卡收单经验 != null" >
+        是否有内卡收单经验,
+      </if>
+      <if test="内卡开始收单日期 != null" >
+        内卡开始收单日期,
+      </if>
+      <if test="内卡收单机构 != null" >
+        内卡收单机构,
+      </if>
+      <if test="是否有外卡收单经验 != null" >
+        是否有外卡收单经验,
+      </if>
+      <if test="外卡收单日期 != null" >
+        外卡收单日期,
+      </if>
+      <if test="外卡收单机构 != null" >
+        外卡收单机构,
+      </if>
+      <if test="收银员业务知识和操作技能 != null" >
+        收银员业务知识和操作技能,
+      </if>
+      <if test="商户是否被列入中国银联或其它卡组织的可疑或风险商户名单 != null" >
+        商户是否被列入中国银联或其它卡组织的可疑或风险商户名单,
+      </if>
+      <if test="商户法人代表否被列入中国银联或其它卡组织的可疑或风险商户法人代表名单 != null" >
+        商户法人代表否被列入中国银联或其它卡组织的可疑或风险商户法人代表名单,
+      </if>
+      <if test="商户以前是否被其它收单机构拒绝 != null" >
+        商户以前是否被其它收单机构拒绝,
+      </if>
+      <if test="是否被列入中国银联或其它卡组织的不良持卡人名单 != null" >
+        是否被列入中国银联或其它卡组织的不良持卡人名单,
+      </if>
+      <if test="是否卷入法律诉讼 != null" >
+        是否卷入法律诉讼,
+      </if>
+      <if test="商户负责人是否卷入法律诉讼 != null" >
+        商户负责人是否卷入法律诉讼,
+      </if>
+      <if test="是否有被处罚记录 != null" >
+        是否有被处罚记录,
+      </if>
+      <if test="是否有逾期债务 != null" >
+        是否有逾期债务,
+      </if>
+      <if test="是否为重点监控商户 != null" >
+        是否为重点监控商户,
+      </if>
+      <if test="风险信息来源 != null" >
+        风险信息来源,
+      </if>
+      <if test="商户风险等级初步意见 != null" >
+        商户风险等级_初步意见,
+      </if>
+      <if test="是否检查验证商户的营业执照等证明文件其营业执照等证明文件的复印件是否与原件一致 != null" >
+        是否检查验证商户的营业执照等证明文件_其营业执照等证明文件的复印件是否与原件一致,
+      </if>
+      <if test="是否向商户所在地工商部门联合征信机构进行企业信用状况查询 != null" >
+        是否向商户所在地工商部门_联合征信机构进行企业信用状况查询,
+      </if>
+      <if test="是否对商户进行实地考察 != null" >
+        是否对商户进行实地考察,
+      </if>
+      <if test="商户经营范围与营业执照登记是否相符 != null" >
+        商户经营范围与营业执照登记是否相符,
+      </if>
+      <if test="是否有足够的存货来支持销售 != null" >
+        是否有足够的存货来支持销售,
+      </if>
+      <if test="商户经营状况 != null" >
+        商户经营状况,
+      </if>
+      <if test="是否向商户索取财务报表 != null" >
+        是否向商户索取财务报表,
+      </if>
+      <if test="考察人 != null" >
+        考察人,
+      </if>
+      <if test="考察日期 != null" >
+        考察日期,
+      </if>
+      <if test="商户监控类型 != null" >
+        商户监控类型,
+      </if>
+      <if test="商户免监控选项 != null" >
+        商户免监控选项,
+      </if>
+      <if test="商户营业地址 != null" >
+        商户营业地址,
+      </if>
+      <if test="商户联系人 != null" >
+        商户联系人,
+      </if>
+      <if test="商户审批通过日期 != null" >
+        商户审批通过日期,
+      </if>
+      <if test="商户联系人电话 != null" >
+        商户联系人电话,
+      </if>
+      <if test="商户更新日期 != null" >
+        商户更新日期,
+      </if>
+      <if test="商户管理状态 != null" >
+        商户管理状态,
+      </if>
+      <if test="商户状态 != null" >
+        商户状态,
+      </if>
+      <if test="分店编码 != null" >
+        分店编码,
+      </if>
+      <if test="分店名称 != null" >
+        分店名称,
+      </if>
+      <if test="分店营业地址 != null" >
+        分店营业地址,
+      </if>
+      <if test="分店签购单名称 != null" >
+        分店签购单名称,
+      </if>
+      <if test="分店营业面积 != null" >
+        分店营业面积,
+      </if>
+      <if test="分店经营地段 != null" >
+        分店经营地段,
+      </if>
+      <if test="分店经营区域 != null" >
+        分店经营区域,
+      </if>
+      <if test="分店营业用地性质 != null" >
+        分店营业用地性质,
+      </if>
+      <if test="分店开始营业日期 != null" >
+        分店开始营业日期,
+      </if>
+      <if test="分店开始营业时间 != null" >
+        分店开始营业时间,
+      </if>
+      <if test="分店关门结账时间 != null" >
+        分店关门结账时间,
+      </if>
+      <if test="分店联系人 != null" >
+        分店联系人,
+      </if>
+      <if test="分店联系人电话 != null" >
+        分店联系人电话,
+      </if>
+      <if test="分店传真 != null" >
+        分店传真,
+      </if>
+      <if test="分店电子邮箱地址 != null" >
+        分店电子邮箱地址,
+      </if>
+      <if test="分店日常维护人员 != null" >
+        分店日常维护人员,
+      </if>
+      <if test="分店日常维护人员手机 != null" >
+        分店日常维护人员手机,
+      </if>
+      <if test="分店固定终端数量 != null" >
+        分店固定终端数量,
+      </if>
+      <if test="分店电话终端数量 != null" >
+        分店电话终端数量,
+      </if>
+      <if test="分店移动终端数量 != null" >
+        分店移动终端数量,
+      </if>
+      <if test="分店结算设置 != null" >
+        分店结算设置,
+      </if>
+      <if test="分店资金划付用途 != null" >
+        分店资金划付用途,
+      </if>
+      <if test="分店审批通过日期 != null" >
+        分店审批通过日期,
+      </if>
+      <if test="分店更新时间 != null" >
+        分店更新时间,
+      </if>
+      <if test="分店注销时间 != null" >
+        分店注销时间,
+      </if>
+      <if test="分店联系人手机 != null" >
+        分店联系人手机,
+      </if>
+      <if test="分店邮寄地址类型 != null" >
+        分店邮寄地址类型,
+      </if>
+      <if test="分店邮寄地址 != null" >
+        分店邮寄地址,
+      </if>
+      <if test="分店状态 != null" >
+        分店状态,
+      </if>
+      <if test="分店管理状态 != null" >
+        分店管理状态,
+      </if>
+      <if test="新装机完成时间 != null" >
+        新装机完成时间,
+      </if>
+      <if test="门店代码 != null" >
+        门店代码,
+      </if>
+      <if test="门店结算账户名称 != null" >
+        门店结算账户名称,
+      </if>
+      <if test="门店结算账户账号 != null" >
+        门店结算账户账号,
+      </if>
+      <if test="门店结算开户行名称 != null" >
+        门店结算开户行名称,
+      </if>
+      <if test="门店结算开户行行号 != null" >
+        门店结算开户行行号,
+      </if>
+      <if test="终端编号 != null" >
+        终端编号,
+      </if>
+      <if test="终端类型 != null" >
+        终端类型,
+      </if>
+      <if test="终端装机需求 != null" >
+        终端装机需求,
+      </if>
+      <if test="pos产权方 != null" >
+        POS产权方,
+      </if>
+      <if test="产权机构号 != null" >
+        产权机构号,
+      </if>
+      <if test="押金标准 != null" >
+        押金标准,
+      </if>
+      <if test="终端品牌 != null" >
+        终端品牌,
+      </if>
+      <if test="终端型号 != null" >
+        终端型号,
+      </if>
+      <if test="终端条形码 != null" >
+        终端条形码,
+      </if>
+      <if test="主机序列号 != null" >
+        主机序列号,
+      </if>
+      <if test="终端安装位置 != null" >
+        终端安装位置,
+      </if>
+      <if test="业务受理接入方式 != null" >
+        业务受理接入方式,
+      </if>
+      <if test="呼出号码 != null" >
+        呼出号码,
+      </if>
+      <if test="终端增值业务类型 != null" >
+        终端增值业务类型,
+      </if>
+      <if test="终端开通交易类型 != null" >
+        终端开通交易类型,
+      </if>
+      <if test="终端安全模块号 != null" >
+        终端安全模块号,
+      </if>
+      <if test="终端应用类型 != null" >
+        终端应用类型,
+      </if>
+      <if test="银行卡应用商户编码 != null" >
+        银行卡应用商户编码,
+      </if>
+      <if test="是否开通信用卡 != null" >
+        是否开通信用卡,
+      </if>
+      <if test="开通信用额度 != null" >
+        开通信用额度,
+      </if>
+      <if test="银行卡其它信息 != null" >
+        银行卡其它信息,
+      </if>
+      <if test="终端审批通过日期 != null" >
+        终端审批通过日期,
+      </if>
+      <if test="终端注销日期 != null" >
+        终端注销日期,
+      </if>
+      <if test="终端管理状态 != null" >
+        终端管理状态,
+      </if>
+      <if test="终端状态 != null" >
+        终端状态,
+      </if>
+      <if test="更新时间 != null" >
+        更新时间,
+      </if>
+      <if test="装机完成时间 != null" >
+        装机完成时间,
+      </if>
+      <if test="借记卡控制方式 != null" >
+        借记卡控制方式,
+      </if>
+      <if test="借记卡单笔上限 != null" >
+        借记卡单笔上限,
+      </if>
+      <if test="借记卡单笔下限 != null" >
+        借记卡单笔下限,
+      </if>
+      <if test="借记卡累计限额 != null" >
+        借记卡累计限额,
+      </if>
+      <if test="贷记卡控制方式 != null" >
+        贷记卡控制方式,
+      </if>
+      <if test="贷记卡单笔上限 != null" >
+        贷记卡单笔上限,
+      </if>
+      <if test="贷记卡单笔下限 != null" >
+        贷记卡单笔下限,
+      </if>
+      <if test="贷记卡累计限额 != null" >
+        贷记卡累计限额,
+      </if>
+      <if test="外卡商户编码 != null" >
+        外卡商户编码,
+      </if>
+      <if test="美国运通商户编码 != null" >
+        美国运通商户编码,
+      </if>
+      <if test="外卡商户mcc != null" >
+        外卡商户MCC,
+      </if>
+      <if test="外卡商户所在地区 != null" >
+        外卡商户所在地区,
+      </if>
+      <if test="外卡国家代码 != null" >
+        外卡国家代码,
+      </if>
+      <if test="外卡商户邮编 != null" >
+        外卡商户邮编,
+      </if>
+      <if test="外卡英文名称 != null" >
+        外卡英文名称,
+      </if>
+      <if test="外卡商户地址 != null" >
+        外卡商户地址,
+      </if>
+      <if test="visa手续费 != null" >
+        VISA手续费,
+      </if>
+      <if test="master手续费 != null" >
+        MASTER手续费,
+      </if>
+      <if test="jcb手续费 != null" >
+        JCB手续费,
+      </if>
+      <if test="amex手续费 != null" >
+        AMEX手续费,
+      </if>
+      <if test="diner手续费 != null" >
+        DINER手续费,
+      </if>
+      <if test="visaDcc手续费 != null" >
+        VISA_DCC手续费,
+      </if>
+      <if test="masterDcc手续费 != null" >
+        MASTER_DCC手续费,
+      </if>
+      <if test="外卡账号 != null" >
+        外卡账号,
+      </if>
+      <if test="外卡账户名称 != null" >
+        外卡账户名称,
+      </if>
+      <if test="外卡开户行名称 != null" >
+        外卡开户行名称,
+      </if>
+      <if test="外卡开户行行号 != null" >
+        外卡开户行行号,
+      </if>
+      <if test="是否开通外卡 != null" >
+        是否开通外卡,
+      </if>
+      <if test="统一商户编码 != null" >
+        统一商户编码,
+      </if>
+      <if test="营业执照开始日期 != null" >
+        营业执照开始日期,
+      </if>
+      <if test="营业执照结束日期 != null" >
+        营业执照结束日期,
+      </if>
+      <if test="税务登记号开始日期 != null" >
+        税务登记号开始日期,
+      </if>
+      <if test="税务登记号结束日期 != null" >
+        税务登记号结束日期,
+      </if>
+      <if test="组织机构代码开始日期 != null" >
+        组织机构代码开始日期,
+      </if>
+      <if test="组织机构代码结束日期 != null" >
+        组织机构代码结束日期,
+      </if>
+      <if test="法人证件有效期开始日期 != null" >
+        法人证件有效期开始日期,
+      </if>
+      <if test="法人证件有效期结束日期 != null" >
+        法人证件有效期结束日期,
+      </if>
+      <if test="免密功能 != null" >
+        免密功能,
+      </if>
+      <if test="免签功能 != null" >
+        免签功能,
+      </if>
+      <if test="免密限额 != null" >
+        免密限额,
+      </if>
+      <if test="免签限额 != null" >
+        免签限额,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="商户编码 != null" >
+        #{商户编码,jdbcType=NVARCHAR},
+      </if>
+      <if test="分公司编码 != null" >
+        #{分公司编码,jdbcType=NVARCHAR},
+      </if>
+      <if test="拓展机构 != null" >
+        #{拓展机构,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户申请日期 != null" >
+        #{商户申请日期,jdbcType=NVARCHAR},
+      </if>
+      <if test="兴业商户结算账户账号 != null" >
+        #{兴业商户结算账户账号,jdbcType=NVARCHAR},
+      </if>
+      <if test="兴业结算开户行支付系统行号 != null" >
+        #{兴业结算开户行支付系统行号,jdbcType=NVARCHAR},
+      </if>
+      <if test="兴业商户结算开户行名称 != null" >
+        #{兴业商户结算开户行名称,jdbcType=NVARCHAR},
+      </if>
+      <if test="兴业商户结算账户名称 != null" >
+        #{兴业商户结算账户名称,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户所属分公司 != null" >
+        #{商户所属分公司,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户所属地市业务部 != null" >
+        #{商户所属地市业务部,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户来源渠道 != null" >
+        #{商户来源渠道,jdbcType=NVARCHAR},
+      </if>
+      <if test="发展人推荐人 != null" >
+        #{发展人推荐人,jdbcType=NVARCHAR},
+      </if>
+      <if test="所属收单机构 != null" >
+        #{所属收单机构,jdbcType=NVARCHAR},
+      </if>
+      <if test="收单机构32域 != null" >
+        #{收单机构32域,jdbcType=NVARCHAR},
+      </if>
+      <if test="服务模式 != null" >
+        #{服务模式,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户编码前三位机构代码 != null" >
+        #{商户编码前三位机构代码,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户所在地区 != null" >
+        #{商户所在地区,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户mcc42 != null" >
+        #{商户mcc42,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户类型18域mcc != null" >
+        #{商户类型18域mcc,jdbcType=NVARCHAR},
+      </if>
+      <if test="套用商户类型原因 != null" >
+        #{套用商户类型原因,jdbcType=NVARCHAR},
+      </if>
+      <if test="酒店级别 != null" >
+        #{酒店级别,jdbcType=NVARCHAR},
+      </if>
+      <if test="是否按卡种结算 != null" >
+        #{是否按卡种结算,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户结算账户名称 != null" >
+        #{商户结算账户名称,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户结算账户账号 != null" >
+        #{商户结算账户账号,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户结算开户行名称 != null" >
+        #{商户结算开户行名称,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户结算开户行支付系统行号 != null" >
+        #{商户结算开户行支付系统行号,jdbcType=NVARCHAR},
+      </if>
+      <if test="信用卡结算账户名称 != null" >
+        #{信用卡结算账户名称,jdbcType=NVARCHAR},
+      </if>
+      <if test="信用卡结算账户账号 != null" >
+        #{信用卡结算账户账号,jdbcType=NVARCHAR},
+      </if>
+      <if test="信用卡结算开户行名称 != null" >
+        #{信用卡结算开户行名称,jdbcType=NVARCHAR},
+      </if>
+      <if test="信用卡结算开户行支付系统行号 != null" >
+        #{信用卡结算开户行支付系统行号,jdbcType=NVARCHAR},
+      </if>
+      <if test="支出账户名称 != null" >
+        #{支出账户名称,jdbcType=NVARCHAR},
+      </if>
+      <if test="支出账户账号 != null" >
+        #{支出账户账号,jdbcType=NVARCHAR},
+      </if>
+      <if test="支出开户行名称 != null" >
+        #{支出开户行名称,jdbcType=NVARCHAR},
+      </if>
+      <if test="支出开户行支付系统行号 != null" >
+        #{支出开户行支付系统行号,jdbcType=NVARCHAR},
+      </if>
+      <if test="借记卡账户名称 != null" >
+        #{借记卡账户名称,jdbcType=NVARCHAR},
+      </if>
+      <if test="借记卡账户账号 != null" >
+        #{借记卡账户账号,jdbcType=NVARCHAR},
+      </if>
+      <if test="借记卡开户行名称 != null" >
+        #{借记卡开户行名称,jdbcType=NVARCHAR},
+      </if>
+      <if test="借记卡开户行支付系统行号 != null" >
+        #{借记卡开户行支付系统行号,jdbcType=NVARCHAR},
+      </if>
+      <if test="工商注册名称 != null" >
+        #{工商注册名称,jdbcType=NVARCHAR},
+      </if>
+      <if test="营业名称 != null" >
+        #{营业名称,jdbcType=NVARCHAR},
+      </if>
+      <if test="英文名称 != null" >
+        #{英文名称,jdbcType=NVARCHAR},
+      </if>
+      <if test="英文简称 != null" >
+        #{英文简称,jdbcType=NVARCHAR},
+      </if>
+      <if test="营业执照号码 != null" >
+        #{营业执照号码,jdbcType=NVARCHAR},
+      </if>
+      <if test="注册资本 != null" >
+        #{注册资本,jdbcType=NVARCHAR},
+      </if>
+      <if test="注册期限 != null" >
+        #{注册期限,jdbcType=NVARCHAR},
+      </if>
+      <if test="经营范围 != null" >
+        #{经营范围,jdbcType=NVARCHAR},
+      </if>
+      <if test="主营业务 != null" >
+        #{主营业务,jdbcType=NVARCHAR},
+      </if>
+      <if test="法人代表 != null" >
+        #{法人代表,jdbcType=NVARCHAR},
+      </if>
+      <if test="法人证件类型 != null" >
+        #{法人证件类型,jdbcType=NVARCHAR},
+      </if>
+      <if test="法人证件号码 != null" >
+        #{法人证件号码,jdbcType=NVARCHAR},
+      </if>
+      <if test="组织机构代码 != null" >
+        #{组织机构代码,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户性质 != null" >
+        #{商户性质,jdbcType=NVARCHAR},
+      </if>
+      <if test="注册地址 != null" >
+        #{注册地址,jdbcType=NVARCHAR},
+      </if>
+      <if test="员工人数 != null" >
+        #{员工人数,jdbcType=NVARCHAR},
+      </if>
+      <if test="前一年营业额 != null" >
+        #{前一年营业额,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户销售方式 != null" >
+        #{商户销售方式,jdbcType=NVARCHAR},
+      </if>
+      <if test="销售付款方式 != null" >
+        #{销售付款方式,jdbcType=NVARCHAR},
+      </if>
+      <if test="服务等级 != null" >
+        #{服务等级,jdbcType=NVARCHAR},
+      </if>
+      <if test="是否多个收单行 != null" >
+        #{是否多个收单行,jdbcType=NVARCHAR},
+      </if>
+      <if test="财务联系人姓名 != null" >
+        #{财务联系人姓名,jdbcType=NVARCHAR},
+      </if>
+      <if test="财务联系人电话 != null" >
+        #{财务联系人电话,jdbcType=NVARCHAR},
+      </if>
+      <if test="财务联系人传真 != null" >
+        #{财务联系人传真,jdbcType=NVARCHAR},
+      </if>
+      <if test="财务联系人电子信箱 != null" >
+        #{财务联系人电子信箱,jdbcType=NVARCHAR},
+      </if>
+      <if test="专业化服务机构 != null" >
+        #{专业化服务机构,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户结算途径 != null" >
+        #{商户结算途径,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户结算周期 != null" >
+        #{商户结算周期,jdbcType=NVARCHAR},
+      </if>
+      <if test="是否支持信用卡实时结算 != null" >
+        #{是否支持信用卡实时结算,jdbcType=NVARCHAR},
+      </if>
+      <if test="批结点 != null" >
+        #{批结点,jdbcType=NVARCHAR},
+      </if>
+      <if test="是否集团商户 != null" >
+        #{是否集团商户,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户所属集团编码 != null" >
+        #{商户所属集团编码,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户所属集团 != null" >
+        #{商户所属集团,jdbcType=NVARCHAR},
+      </if>
+      <if test="资金是否归集至集团商户 != null" >
+        #{资金是否归集至集团商户,jdbcType=NVARCHAR},
+      </if>
+      <if test="对账单发送方式 != null" >
+        #{对账单发送方式,jdbcType=NVARCHAR},
+      </if>
+      <if test="邮政编码 != null" >
+        #{邮政编码,jdbcType=NVARCHAR},
+      </if>
+      <if test="邮寄地址 != null" >
+        #{邮寄地址,jdbcType=NVARCHAR},
+      </if>
+      <if test="注销时间 != null" >
+        #{注销时间,jdbcType=NVARCHAR},
+      </if>
+      <if test="开通交易类型 != null" >
+        #{开通交易类型,jdbcType=NVARCHAR},
+      </if>
+      <if test="增值业务类型 != null" >
+        #{增值业务类型,jdbcType=NVARCHAR},
+      </if>
+      <if test="服务性质 != null" >
+        #{服务性质,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户终端应用类型 != null" >
+        #{商户终端应用类型,jdbcType=NVARCHAR},
+      </if>
+      <if test="清算币种代码 != null" >
+        #{清算币种代码,jdbcType=NVARCHAR},
+      </if>
+      <if test="计费类型 != null" >
+        #{计费类型,jdbcType=NVARCHAR},
+      </if>
+      <if test="计费档次 != null" >
+        #{计费档次,jdbcType=NVARCHAR},
+      </if>
+      <if test="境内借记卡手续费收取模式 != null" >
+        #{境内借记卡手续费收取模式,jdbcType=NVARCHAR},
+      </if>
+      <if test="境内借记卡手续费分层信息 != null" >
+        #{境内借记卡手续费分层信息,jdbcType=NVARCHAR},
+      </if>
+      <if test="境内借贷记手续费是否一致 != null" >
+        #{境内借贷记手续费是否一致,jdbcType=NVARCHAR},
+      </if>
+      <if test="境内贷记卡手续费收取模式 != null" >
+        #{境内贷记卡手续费收取模式,jdbcType=NVARCHAR},
+      </if>
+      <if test="境内贷记卡手续费分层信息 != null" >
+        #{境内贷记卡手续费分层信息,jdbcType=NVARCHAR},
+      </if>
+      <if test="境外借记卡手续费收取模式 != null" >
+        #{境外借记卡手续费收取模式,jdbcType=NVARCHAR},
+      </if>
+      <if test="境外借记卡手续费分层信息 != null" >
+        #{境外借记卡手续费分层信息,jdbcType=NVARCHAR},
+      </if>
+      <if test="境外借贷记手续费是否一致 != null" >
+        #{境外借贷记手续费是否一致,jdbcType=NVARCHAR},
+      </if>
+      <if test="境外贷记卡手续费收取模式 != null" >
+        #{境外贷记卡手续费收取模式,jdbcType=NVARCHAR},
+      </if>
+      <if test="境外贷记卡手续费分层信息 != null" >
+        #{境外贷记卡手续费分层信息,jdbcType=NVARCHAR},
+      </if>
+      <if test="手续费模式 != null" >
+        #{手续费模式,jdbcType=NVARCHAR},
+      </if>
+      <if test="节假日合并结算 != null" >
+        #{节假日合并结算,jdbcType=NVARCHAR},
+      </if>
+      <if test="境内借记卡名义扣率和手续费是否一致 != null" >
+        #{境内借记卡名义扣率和手续费是否一致,jdbcType=NVARCHAR},
+      </if>
+      <if test="境内借记卡名义费率收取模式 != null" >
+        #{境内借记卡名义费率收取模式,jdbcType=NVARCHAR},
+      </if>
+      <if test="境内借记卡名义扣率分层信息 != null" >
+        #{境内借记卡名义扣率分层信息,jdbcType=NVARCHAR},
+      </if>
+      <if test="境内贷记卡名义扣率和手续费是否一致 != null" >
+        #{境内贷记卡名义扣率和手续费是否一致,jdbcType=NVARCHAR},
+      </if>
+      <if test="境内贷记卡名义费率收取模式 != null" >
+        #{境内贷记卡名义费率收取模式,jdbcType=NVARCHAR},
+      </if>
+      <if test="境内贷记卡名义扣率分层信息 != null" >
+        #{境内贷记卡名义扣率分层信息,jdbcType=NVARCHAR},
+      </if>
+      <if test="境外借记卡名义扣率和手续费是否一致 != null" >
+        #{境外借记卡名义扣率和手续费是否一致,jdbcType=NVARCHAR},
+      </if>
+      <if test="境外借记卡名义费率收取模式 != null" >
+        #{境外借记卡名义费率收取模式,jdbcType=NVARCHAR},
+      </if>
+      <if test="境外借记卡名义扣率分层信息 != null" >
+        #{境外借记卡名义扣率分层信息,jdbcType=NVARCHAR},
+      </if>
+      <if test="境外贷记卡名义扣率和手续费是否一致 != null" >
+        #{境外贷记卡名义扣率和手续费是否一致,jdbcType=NVARCHAR},
+      </if>
+      <if test="境外贷记卡名义费率收取模式 != null" >
+        #{境外贷记卡名义费率收取模式,jdbcType=NVARCHAR},
+      </if>
+      <if test="境外贷记卡名义扣率分层信息 != null" >
+        #{境外贷记卡名义扣率分层信息,jdbcType=NVARCHAR},
+      </if>
+      <if test="产品手续费收取模式 != null" >
+        #{产品手续费收取模式,jdbcType=NVARCHAR},
+      </if>
+      <if test="产品手续费分层信息 != null" >
+        #{产品手续费分层信息,jdbcType=NVARCHAR},
+      </if>
+      <if test="批结手续费 != null" >
+        #{批结手续费,jdbcType=NVARCHAR},
+      </if>
+      <if test="服务费收取模式 != null" >
+        #{服务费收取模式,jdbcType=NVARCHAR},
+      </if>
+      <if test="服务费类型 != null" >
+        #{服务费类型,jdbcType=NVARCHAR},
+      </if>
+      <if test="开始收取日期 != null" >
+        #{开始收取日期,jdbcType=NVARCHAR},
+      </if>
+      <if test="服务费收取周期 != null" >
+        #{服务费收取周期,jdbcType=NVARCHAR},
+      </if>
+      <if test="服务费收取方式 != null" >
+        #{服务费收取方式,jdbcType=NVARCHAR},
+      </if>
+      <if test="服务费分层信息 != null" >
+        #{服务费分层信息,jdbcType=NVARCHAR},
+      </if>
+      <if test="托收账户账号 != null" >
+        #{托收账户账号,jdbcType=NVARCHAR},
+      </if>
+      <if test="托收账户名称 != null" >
+        #{托收账户名称,jdbcType=NVARCHAR},
+      </if>
+      <if test="托收开户行名称 != null" >
+        #{托收开户行名称,jdbcType=NVARCHAR},
+      </if>
+      <if test="托收开户行支付系统行号 != null" >
+        #{托收开户行支付系统行号,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户押金总计 != null" >
+        #{商户押金总计,jdbcType=NVARCHAR},
+      </if>
+      <if test="按商户收取押金 != null" >
+        #{按商户收取押金,jdbcType=NVARCHAR},
+      </if>
+      <if test="移动终端押金总额 != null" >
+        #{移动终端押金总额,jdbcType=NVARCHAR},
+      </if>
+      <if test="移动终端数量 != null" >
+        #{移动终端数量,jdbcType=NVARCHAR},
+      </if>
+      <if test="固定终端押金总额 != null" >
+        #{固定终端押金总额,jdbcType=NVARCHAR},
+      </if>
+      <if test="固定终端数量 != null" >
+        #{固定终端数量,jdbcType=NVARCHAR},
+      </if>
+      <if test="电话终端押金总额 != null" >
+        #{电话终端押金总额,jdbcType=NVARCHAR},
+      </if>
+      <if test="电话终端数量 != null" >
+        #{电话终端数量,jdbcType=NVARCHAR},
+      </if>
+      <if test="pos品牌需求 != null" >
+        #{pos品牌需求,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户装机需求 != null" >
+        #{商户装机需求,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户开通退货交易终端总量 != null" >
+        #{商户开通退货交易终端总量,jdbcType=NVARCHAR},
+      </if>
+      <if test="负债额 != null" >
+        #{负债额,jdbcType=NVARCHAR},
+      </if>
+      <if test="信用额度 != null" >
+        #{信用额度,jdbcType=NVARCHAR},
+      </if>
+      <if test="信用期 != null" >
+        #{信用期,jdbcType=NVARCHAR},
+      </if>
+      <if test="是否有债务逾期 != null" >
+        #{是否有债务逾期,jdbcType=NVARCHAR},
+      </if>
+      <if test="是否有内卡收单经验 != null" >
+        #{是否有内卡收单经验,jdbcType=NVARCHAR},
+      </if>
+      <if test="内卡开始收单日期 != null" >
+        #{内卡开始收单日期,jdbcType=NVARCHAR},
+      </if>
+      <if test="内卡收单机构 != null" >
+        #{内卡收单机构,jdbcType=NVARCHAR},
+      </if>
+      <if test="是否有外卡收单经验 != null" >
+        #{是否有外卡收单经验,jdbcType=NVARCHAR},
+      </if>
+      <if test="外卡收单日期 != null" >
+        #{外卡收单日期,jdbcType=NVARCHAR},
+      </if>
+      <if test="外卡收单机构 != null" >
+        #{外卡收单机构,jdbcType=NVARCHAR},
+      </if>
+      <if test="收银员业务知识和操作技能 != null" >
+        #{收银员业务知识和操作技能,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户是否被列入中国银联或其它卡组织的可疑或风险商户名单 != null" >
+        #{商户是否被列入中国银联或其它卡组织的可疑或风险商户名单,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户法人代表否被列入中国银联或其它卡组织的可疑或风险商户法人代表名单 != null" >
+        #{商户法人代表否被列入中国银联或其它卡组织的可疑或风险商户法人代表名单,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户以前是否被其它收单机构拒绝 != null" >
+        #{商户以前是否被其它收单机构拒绝,jdbcType=NVARCHAR},
+      </if>
+      <if test="是否被列入中国银联或其它卡组织的不良持卡人名单 != null" >
+        #{是否被列入中国银联或其它卡组织的不良持卡人名单,jdbcType=NVARCHAR},
+      </if>
+      <if test="是否卷入法律诉讼 != null" >
+        #{是否卷入法律诉讼,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户负责人是否卷入法律诉讼 != null" >
+        #{商户负责人是否卷入法律诉讼,jdbcType=NVARCHAR},
+      </if>
+      <if test="是否有被处罚记录 != null" >
+        #{是否有被处罚记录,jdbcType=NVARCHAR},
+      </if>
+      <if test="是否有逾期债务 != null" >
+        #{是否有逾期债务,jdbcType=NVARCHAR},
+      </if>
+      <if test="是否为重点监控商户 != null" >
+        #{是否为重点监控商户,jdbcType=NVARCHAR},
+      </if>
+      <if test="风险信息来源 != null" >
+        #{风险信息来源,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户风险等级初步意见 != null" >
+        #{商户风险等级初步意见,jdbcType=NVARCHAR},
+      </if>
+      <if test="是否检查验证商户的营业执照等证明文件其营业执照等证明文件的复印件是否与原件一致 != null" >
+        #{是否检查验证商户的营业执照等证明文件其营业执照等证明文件的复印件是否与原件一致,jdbcType=NVARCHAR},
+      </if>
+      <if test="是否向商户所在地工商部门联合征信机构进行企业信用状况查询 != null" >
+        #{是否向商户所在地工商部门联合征信机构进行企业信用状况查询,jdbcType=NVARCHAR},
+      </if>
+      <if test="是否对商户进行实地考察 != null" >
+        #{是否对商户进行实地考察,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户经营范围与营业执照登记是否相符 != null" >
+        #{商户经营范围与营业执照登记是否相符,jdbcType=NVARCHAR},
+      </if>
+      <if test="是否有足够的存货来支持销售 != null" >
+        #{是否有足够的存货来支持销售,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户经营状况 != null" >
+        #{商户经营状况,jdbcType=NVARCHAR},
+      </if>
+      <if test="是否向商户索取财务报表 != null" >
+        #{是否向商户索取财务报表,jdbcType=NVARCHAR},
+      </if>
+      <if test="考察人 != null" >
+        #{考察人,jdbcType=NVARCHAR},
+      </if>
+      <if test="考察日期 != null" >
+        #{考察日期,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户监控类型 != null" >
+        #{商户监控类型,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户免监控选项 != null" >
+        #{商户免监控选项,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户营业地址 != null" >
+        #{商户营业地址,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户联系人 != null" >
+        #{商户联系人,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户审批通过日期 != null" >
+        #{商户审批通过日期,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户联系人电话 != null" >
+        #{商户联系人电话,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户更新日期 != null" >
+        #{商户更新日期,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户管理状态 != null" >
+        #{商户管理状态,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户状态 != null" >
+        #{商户状态,jdbcType=NVARCHAR},
+      </if>
+      <if test="分店编码 != null" >
+        #{分店编码,jdbcType=NVARCHAR},
+      </if>
+      <if test="分店名称 != null" >
+        #{分店名称,jdbcType=NVARCHAR},
+      </if>
+      <if test="分店营业地址 != null" >
+        #{分店营业地址,jdbcType=NVARCHAR},
+      </if>
+      <if test="分店签购单名称 != null" >
+        #{分店签购单名称,jdbcType=NVARCHAR},
+      </if>
+      <if test="分店营业面积 != null" >
+        #{分店营业面积,jdbcType=NVARCHAR},
+      </if>
+      <if test="分店经营地段 != null" >
+        #{分店经营地段,jdbcType=NVARCHAR},
+      </if>
+      <if test="分店经营区域 != null" >
+        #{分店经营区域,jdbcType=NVARCHAR},
+      </if>
+      <if test="分店营业用地性质 != null" >
+        #{分店营业用地性质,jdbcType=NVARCHAR},
+      </if>
+      <if test="分店开始营业日期 != null" >
+        #{分店开始营业日期,jdbcType=NVARCHAR},
+      </if>
+      <if test="分店开始营业时间 != null" >
+        #{分店开始营业时间,jdbcType=NVARCHAR},
+      </if>
+      <if test="分店关门结账时间 != null" >
+        #{分店关门结账时间,jdbcType=NVARCHAR},
+      </if>
+      <if test="分店联系人 != null" >
+        #{分店联系人,jdbcType=NVARCHAR},
+      </if>
+      <if test="分店联系人电话 != null" >
+        #{分店联系人电话,jdbcType=NVARCHAR},
+      </if>
+      <if test="分店传真 != null" >
+        #{分店传真,jdbcType=NVARCHAR},
+      </if>
+      <if test="分店电子邮箱地址 != null" >
+        #{分店电子邮箱地址,jdbcType=NVARCHAR},
+      </if>
+      <if test="分店日常维护人员 != null" >
+        #{分店日常维护人员,jdbcType=NVARCHAR},
+      </if>
+      <if test="分店日常维护人员手机 != null" >
+        #{分店日常维护人员手机,jdbcType=NVARCHAR},
+      </if>
+      <if test="分店固定终端数量 != null" >
+        #{分店固定终端数量,jdbcType=NVARCHAR},
+      </if>
+      <if test="分店电话终端数量 != null" >
+        #{分店电话终端数量,jdbcType=NVARCHAR},
+      </if>
+      <if test="分店移动终端数量 != null" >
+        #{分店移动终端数量,jdbcType=NVARCHAR},
+      </if>
+      <if test="分店结算设置 != null" >
+        #{分店结算设置,jdbcType=NVARCHAR},
+      </if>
+      <if test="分店资金划付用途 != null" >
+        #{分店资金划付用途,jdbcType=NVARCHAR},
+      </if>
+      <if test="分店审批通过日期 != null" >
+        #{分店审批通过日期,jdbcType=NVARCHAR},
+      </if>
+      <if test="分店更新时间 != null" >
+        #{分店更新时间,jdbcType=NVARCHAR},
+      </if>
+      <if test="分店注销时间 != null" >
+        #{分店注销时间,jdbcType=NVARCHAR},
+      </if>
+      <if test="分店联系人手机 != null" >
+        #{分店联系人手机,jdbcType=NVARCHAR},
+      </if>
+      <if test="分店邮寄地址类型 != null" >
+        #{分店邮寄地址类型,jdbcType=NVARCHAR},
+      </if>
+      <if test="分店邮寄地址 != null" >
+        #{分店邮寄地址,jdbcType=NVARCHAR},
+      </if>
+      <if test="分店状态 != null" >
+        #{分店状态,jdbcType=NVARCHAR},
+      </if>
+      <if test="分店管理状态 != null" >
+        #{分店管理状态,jdbcType=NVARCHAR},
+      </if>
+      <if test="新装机完成时间 != null" >
+        #{新装机完成时间,jdbcType=NVARCHAR},
+      </if>
+      <if test="门店代码 != null" >
+        #{门店代码,jdbcType=NVARCHAR},
+      </if>
+      <if test="门店结算账户名称 != null" >
+        #{门店结算账户名称,jdbcType=NVARCHAR},
+      </if>
+      <if test="门店结算账户账号 != null" >
+        #{门店结算账户账号,jdbcType=NVARCHAR},
+      </if>
+      <if test="门店结算开户行名称 != null" >
+        #{门店结算开户行名称,jdbcType=NVARCHAR},
+      </if>
+      <if test="门店结算开户行行号 != null" >
+        #{门店结算开户行行号,jdbcType=NVARCHAR},
+      </if>
+      <if test="终端编号 != null" >
+        #{终端编号,jdbcType=NVARCHAR},
+      </if>
+      <if test="终端类型 != null" >
+        #{终端类型,jdbcType=NVARCHAR},
+      </if>
+      <if test="终端装机需求 != null" >
+        #{终端装机需求,jdbcType=NVARCHAR},
+      </if>
+      <if test="pos产权方 != null" >
+        #{pos产权方,jdbcType=NVARCHAR},
+      </if>
+      <if test="产权机构号 != null" >
+        #{产权机构号,jdbcType=NVARCHAR},
+      </if>
+      <if test="押金标准 != null" >
+        #{押金标准,jdbcType=NVARCHAR},
+      </if>
+      <if test="终端品牌 != null" >
+        #{终端品牌,jdbcType=NVARCHAR},
+      </if>
+      <if test="终端型号 != null" >
+        #{终端型号,jdbcType=NVARCHAR},
+      </if>
+      <if test="终端条形码 != null" >
+        #{终端条形码,jdbcType=NVARCHAR},
+      </if>
+      <if test="主机序列号 != null" >
+        #{主机序列号,jdbcType=NVARCHAR},
+      </if>
+      <if test="终端安装位置 != null" >
+        #{终端安装位置,jdbcType=NVARCHAR},
+      </if>
+      <if test="业务受理接入方式 != null" >
+        #{业务受理接入方式,jdbcType=NVARCHAR},
+      </if>
+      <if test="呼出号码 != null" >
+        #{呼出号码,jdbcType=NVARCHAR},
+      </if>
+      <if test="终端增值业务类型 != null" >
+        #{终端增值业务类型,jdbcType=NVARCHAR},
+      </if>
+      <if test="终端开通交易类型 != null" >
+        #{终端开通交易类型,jdbcType=NVARCHAR},
+      </if>
+      <if test="终端安全模块号 != null" >
+        #{终端安全模块号,jdbcType=NVARCHAR},
+      </if>
+      <if test="终端应用类型 != null" >
+        #{终端应用类型,jdbcType=NVARCHAR},
+      </if>
+      <if test="银行卡应用商户编码 != null" >
+        #{银行卡应用商户编码,jdbcType=NVARCHAR},
+      </if>
+      <if test="是否开通信用卡 != null" >
+        #{是否开通信用卡,jdbcType=NVARCHAR},
+      </if>
+      <if test="开通信用额度 != null" >
+        #{开通信用额度,jdbcType=NVARCHAR},
+      </if>
+      <if test="银行卡其它信息 != null" >
+        #{银行卡其它信息,jdbcType=NVARCHAR},
+      </if>
+      <if test="终端审批通过日期 != null" >
+        #{终端审批通过日期,jdbcType=NVARCHAR},
+      </if>
+      <if test="终端注销日期 != null" >
+        #{终端注销日期,jdbcType=NVARCHAR},
+      </if>
+      <if test="终端管理状态 != null" >
+        #{终端管理状态,jdbcType=NVARCHAR},
+      </if>
+      <if test="终端状态 != null" >
+        #{终端状态,jdbcType=NVARCHAR},
+      </if>
+      <if test="更新时间 != null" >
+        #{更新时间,jdbcType=NVARCHAR},
+      </if>
+      <if test="装机完成时间 != null" >
+        #{装机完成时间,jdbcType=NVARCHAR},
+      </if>
+      <if test="借记卡控制方式 != null" >
+        #{借记卡控制方式,jdbcType=NVARCHAR},
+      </if>
+      <if test="借记卡单笔上限 != null" >
+        #{借记卡单笔上限,jdbcType=NVARCHAR},
+      </if>
+      <if test="借记卡单笔下限 != null" >
+        #{借记卡单笔下限,jdbcType=NVARCHAR},
+      </if>
+      <if test="借记卡累计限额 != null" >
+        #{借记卡累计限额,jdbcType=NVARCHAR},
+      </if>
+      <if test="贷记卡控制方式 != null" >
+        #{贷记卡控制方式,jdbcType=NVARCHAR},
+      </if>
+      <if test="贷记卡单笔上限 != null" >
+        #{贷记卡单笔上限,jdbcType=NVARCHAR},
+      </if>
+      <if test="贷记卡单笔下限 != null" >
+        #{贷记卡单笔下限,jdbcType=NVARCHAR},
+      </if>
+      <if test="贷记卡累计限额 != null" >
+        #{贷记卡累计限额,jdbcType=NVARCHAR},
+      </if>
+      <if test="外卡商户编码 != null" >
+        #{外卡商户编码,jdbcType=NVARCHAR},
+      </if>
+      <if test="美国运通商户编码 != null" >
+        #{美国运通商户编码,jdbcType=NVARCHAR},
+      </if>
+      <if test="外卡商户mcc != null" >
+        #{外卡商户mcc,jdbcType=NVARCHAR},
+      </if>
+      <if test="外卡商户所在地区 != null" >
+        #{外卡商户所在地区,jdbcType=NVARCHAR},
+      </if>
+      <if test="外卡国家代码 != null" >
+        #{外卡国家代码,jdbcType=NVARCHAR},
+      </if>
+      <if test="外卡商户邮编 != null" >
+        #{外卡商户邮编,jdbcType=NVARCHAR},
+      </if>
+      <if test="外卡英文名称 != null" >
+        #{外卡英文名称,jdbcType=NVARCHAR},
+      </if>
+      <if test="外卡商户地址 != null" >
+        #{外卡商户地址,jdbcType=NVARCHAR},
+      </if>
+      <if test="visa手续费 != null" >
+        #{visa手续费,jdbcType=NVARCHAR},
+      </if>
+      <if test="master手续费 != null" >
+        #{master手续费,jdbcType=NVARCHAR},
+      </if>
+      <if test="jcb手续费 != null" >
+        #{jcb手续费,jdbcType=NVARCHAR},
+      </if>
+      <if test="amex手续费 != null" >
+        #{amex手续费,jdbcType=NVARCHAR},
+      </if>
+      <if test="diner手续费 != null" >
+        #{diner手续费,jdbcType=NVARCHAR},
+      </if>
+      <if test="visaDcc手续费 != null" >
+        #{visaDcc手续费,jdbcType=NVARCHAR},
+      </if>
+      <if test="masterDcc手续费 != null" >
+        #{masterDcc手续费,jdbcType=NVARCHAR},
+      </if>
+      <if test="外卡账号 != null" >
+        #{外卡账号,jdbcType=NVARCHAR},
+      </if>
+      <if test="外卡账户名称 != null" >
+        #{外卡账户名称,jdbcType=NVARCHAR},
+      </if>
+      <if test="外卡开户行名称 != null" >
+        #{外卡开户行名称,jdbcType=NVARCHAR},
+      </if>
+      <if test="外卡开户行行号 != null" >
+        #{外卡开户行行号,jdbcType=NVARCHAR},
+      </if>
+      <if test="是否开通外卡 != null" >
+        #{是否开通外卡,jdbcType=NVARCHAR},
+      </if>
+      <if test="统一商户编码 != null" >
+        #{统一商户编码,jdbcType=NVARCHAR},
+      </if>
+      <if test="营业执照开始日期 != null" >
+        #{营业执照开始日期,jdbcType=NVARCHAR},
+      </if>
+      <if test="营业执照结束日期 != null" >
+        #{营业执照结束日期,jdbcType=NVARCHAR},
+      </if>
+      <if test="税务登记号开始日期 != null" >
+        #{税务登记号开始日期,jdbcType=NVARCHAR},
+      </if>
+      <if test="税务登记号结束日期 != null" >
+        #{税务登记号结束日期,jdbcType=NVARCHAR},
+      </if>
+      <if test="组织机构代码开始日期 != null" >
+        #{组织机构代码开始日期,jdbcType=NVARCHAR},
+      </if>
+      <if test="组织机构代码结束日期 != null" >
+        #{组织机构代码结束日期,jdbcType=NVARCHAR},
+      </if>
+      <if test="法人证件有效期开始日期 != null" >
+        #{法人证件有效期开始日期,jdbcType=NVARCHAR},
+      </if>
+      <if test="法人证件有效期结束日期 != null" >
+        #{法人证件有效期结束日期,jdbcType=NVARCHAR},
+      </if>
+      <if test="免密功能 != null" >
+        #{免密功能,jdbcType=NVARCHAR},
+      </if>
+      <if test="免签功能 != null" >
+        #{免签功能,jdbcType=NVARCHAR},
+      </if>
+      <if test="免密限额 != null" >
+        #{免密限额,jdbcType=NVARCHAR},
+      </if>
+      <if test="免签限额 != null" >
+        #{免签限额,jdbcType=NVARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

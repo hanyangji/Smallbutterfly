@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.oracle.dao.IAderDao">
+    <resultMap id="BaseResultMap" type="com.oracle.entity.Ader" >
+         <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="bankname" property="bankname" jdbcType="VARCHAR" />
+    </resultMap>
+    
+    <select id="find" resultMap="BaseResultMap">
+     select * from ader
+    </select>
+    <insert id="insert" parameterType="com.oracle.entity.Ader">
+    insert into ader
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="name != null">
+                name,
+            </if>
+            <if test="bankname != null">
+                bankname,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="bankname != null">
+                #{bankname,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="update" parameterType="com.oracle.entity.Ader">
+    		update student
+        <set >
+            <if test="name != null">
+                stu_name = #{stu_name,jdbcType=VARCHAR},
+            </if>
+            <if test="bankname != null">
+                age = #{age,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+</mapper>

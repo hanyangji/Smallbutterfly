@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.oracle.dao.TMerchantInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.oracle.entity.TMerchantInfo" >
+    <id column="MCHT_CODE" property="mchtCode" jdbcType="VARCHAR" />
+    <result column="MCHT_NAME" property="mchtName" jdbcType="VARCHAR" />
+    <result column="RECOMMENDER" property="recommender" jdbcType="VARCHAR" />
+    <result column="SOURCE_CHANNEL" property="sourceChannel" jdbcType="VARCHAR" />
+    <result column="SETT_BANK_NAME" property="settBankName" jdbcType="VARCHAR" />
+    <result column="SETT_ACCOUNT_NAME" property="settAccountName" jdbcType="VARCHAR" />
+    <result column="SETT_ACCOUNT_NUM" property="settAccountNum" jdbcType="VARCHAR" />
+    <result column="MCHT_LEGAL" property="mchtLegal" jdbcType="VARCHAR" />
+    <result column="MCHT_CONTACT" property="mchtContact" jdbcType="VARCHAR" />
+    <result column="MCHT_CONTACT_NUM" property="mchtContactNum" jdbcType="VARCHAR" />
+    <result column="MCHT_REG_ADDRESS" property="mchtRegAddress" jdbcType="VARCHAR" />
+    <result column="MCHT_STATE" property="mchtState" jdbcType="VARCHAR" />
+    <result column="MCHT_TYPE" property="mchtType" jdbcType="VARCHAR" />
+    <result column="MCHT_LEVEL" property="mchtLevel" jdbcType="VARCHAR" />
+    <result column="MCHT_APPROVAL_DATE" property="mchtApprovalDate" jdbcType="VARCHAR" />
+    <result column="MCHT_MODIFY_DATE" property="mchtModifyDate" jdbcType="VARCHAR" />
+    <result column="BUSADDRESS" property="busaddress" jdbcType="VARCHAR" />
+    <result column="LEGALDOCUMENTTYPE" property="legaldocumenttype" jdbcType="VARCHAR" />
+    <result column="LEGALDOCUMENTNUMBER" property="legaldocumentnumber" jdbcType="VARCHAR" />
+    <result column="BUSLICENSENUMBER" property="buslicensenumber" jdbcType="VARCHAR" />
+    <result column="FEERATE" property="feerate" jdbcType="VARCHAR" />
+    <result column="OLDORNEW" property="oldornew" jdbcType="VARCHAR" />
+    <result column="SERVICETYPE" property="servicetype" jdbcType="VARCHAR" />
+    <result column="TERMINALNUM" property="terminalnum" jdbcType="VARCHAR" />
+    <result column="BUSLICENSENUMBER_EXPIREDATE" property="buslicensenumberExpiredate" jdbcType="VARCHAR" />
+    <result column="MCCTYPE" property="mcctype" jdbcType="VARCHAR" />
+    <result column="EXPANDORGANIZATION" property="expandorganization" jdbcType="VARCHAR" />
+    <result column="ACCOUNTPROVINCE" property="accountprovince" jdbcType="VARCHAR" />
+    <result column="ACCOUNTCITY" property="accountcity" jdbcType="VARCHAR" />
+    <result column="MCHTRANK" property="mchtrank" jdbcType="VARCHAR" />
+    <result column="SUBBANKNO" property="subbankno" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    MCHT_CODE, MCHT_NAME, RECOMMENDER, SOURCE_CHANNEL, SETT_BANK_NAME, SETT_ACCOUNT_NAME, 
+    SETT_ACCOUNT_NUM, MCHT_LEGAL, MCHT_CONTACT, MCHT_CONTACT_NUM, MCHT_REG_ADDRESS, MCHT_STATE, 
+    MCHT_TYPE, MCHT_LEVEL, MCHT_APPROVAL_DATE, MCHT_MODIFY_DATE, BUSADDRESS, LEGALDOCUMENTTYPE, 
+    LEGALDOCUMENTNUMBER, BUSLICENSENUMBER, FEERATE, OLDORNEW, SERVICETYPE, TERMINALNUM, 
+    BUSLICENSENUMBER_EXPIREDATE, MCCTYPE, EXPANDORGANIZATION, ACCOUNTPROVINCE, ACCOUNTCITY, 
+    MCHTRANK, SUBBANKNO
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from T_MERCHANT_INFO
+    where MCHT_CODE = #{mchtCode,jdbcType=VARCHAR}
+  </select>
+  
+  <delete id="deleteBatch" parameterType="java.util.List" >
+    delete from mcht_info
+    where MCHT_CODE in
+    <foreach item="idItem" collection="list" open="(" separator="," close=")">
+     #{idItem,jdbcType=NVARCHAR}
+     </foreach>
+  </delete>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from T_MERCHANT_INFO
+    where MCHT_CODE = #{mchtCode,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.oracle.entity.TMerchantInfo" >
+    insert into all 
+    <foreach collection="list" item="item" index="index" separator=" " >
+     T_MERCHANT_INFO (MCHT_CODE, MCHT_NAME, RECOMMENDER, 
+      SOURCE_CHANNEL, SETT_BANK_NAME, SETT_ACCOUNT_NAME, 
+      SETT_ACCOUNT_NUM, MCHT_LEGAL, MCHT_CONTACT, 
+      MCHT_CONTACT_NUM, MCHT_REG_ADDRESS, MCHT_STATE, 
+      MCHT_TYPE, MCHT_LEVEL, MCHT_APPROVAL_DATE, 
+      MCHT_MODIFY_DATE, BUSADDRESS, LEGALDOCUMENTTYPE, 
+      LEGALDOCUMENTNUMBER, BUSLICENSENUMBER, 
+      FEERATE, OLDORNEW, SERVICETYPE, 
+      TERMINALNUM, BUSLICENSENUMBER_EXPIREDATE, 
+      MCCTYPE, EXPANDORGANIZATION, ACCOUNTPROVINCE, 
+      ACCOUNTCITY, MCHTRANK, SUBBANKNO
+      )
+    values (#{item.mchtCode,jdbcType=VARCHAR}, #{item.mchtName,jdbcType=VARCHAR}, #{item.recommender,jdbcType=VARCHAR}, 
+      #{item.sourceChannel,jdbcType=VARCHAR}, #{item.settBankName,jdbcType=VARCHAR}, #{item.settAccountName,jdbcType=VARCHAR}, 
+      #{item.settAccountNum,jdbcType=VARCHAR}, #{item.mchtLegal,jdbcType=VARCHAR}, #{item.mchtContact,jdbcType=VARCHAR}, 
+      #{item.mchtContactNum,jdbcType=VARCHAR}, #{item.mchtRegAddress,jdbcType=VARCHAR}, #{item.mchtState,jdbcType=VARCHAR}, 
+      #{item.mchtType,jdbcType=VARCHAR}, #{item.mchtLevel,jdbcType=VARCHAR}, #{item.mchtApprovalDate,jdbcType=VARCHAR}, 
+      #{item.mchtModifyDate,jdbcType=VARCHAR}, #{item.busaddress,jdbcType=VARCHAR}, #{item.legaldocumenttype,jdbcType=VARCHAR}, 
+      #{item.legaldocumentnumber,jdbcType=VARCHAR}, #{item.buslicensenumber,jdbcType=VARCHAR}, 
+      #{item.feerate,jdbcType=VARCHAR}, #{item.oldornew,jdbcType=VARCHAR}, #{item.servicetype,jdbcType=VARCHAR}, 
+      #{item.terminalnum,jdbcType=VARCHAR}, #{item.buslicensenumberExpiredate,jdbcType=VARCHAR}, 
+      #{item.mcctype,jdbcType=VARCHAR}, #{item.expandorganization,jdbcType=VARCHAR}, #{item.accountprovince,jdbcType=VARCHAR}, 
+      #{item.accountcity,jdbcType=VARCHAR}, #{item.mchtrank,jdbcType=VARCHAR}, #{item.subbankno,jdbcType=VARCHAR}
+      )
+       </foreach>
+   select 1 from dual
+  </insert>
+  <insert id="insertSelective" parameterType="com.oracle.entity.TMerchantInfo" >
+    insert into T_MERCHANT_INFO
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="mchtCode != null" >
+        MCHT_CODE,
+      </if>
+      <if test="mchtName != null" >
+        MCHT_NAME,
+      </if>
+      <if test="recommender != null" >
+        RECOMMENDER,
+      </if>
+      <if test="sourceChannel != null" >
+        SOURCE_CHANNEL,
+      </if>
+      <if test="settBankName != null" >
+        SETT_BANK_NAME,
+      </if>
+      <if test="settAccountName != null" >
+        SETT_ACCOUNT_NAME,
+      </if>
+      <if test="settAccountNum != null" >
+        SETT_ACCOUNT_NUM,
+      </if>
+      <if test="mchtLegal != null" >
+        MCHT_LEGAL,
+      </if>
+      <if test="mchtContact != null" >
+        MCHT_CONTACT,
+      </if>
+      <if test="mchtContactNum != null" >
+        MCHT_CONTACT_NUM,
+      </if>
+      <if test="mchtRegAddress != null" >
+        MCHT_REG_ADDRESS,
+      </if>
+      <if test="mchtState != null" >
+        MCHT_STATE,
+      </if>
+      <if test="mchtType != null" >
+        MCHT_TYPE,
+      </if>
+      <if test="mchtLevel != null" >
+        MCHT_LEVEL,
+      </if>
+      <if test="mchtApprovalDate != null" >
+        MCHT_APPROVAL_DATE,
+      </if>
+      <if test="mchtModifyDate != null" >
+        MCHT_MODIFY_DATE,
+      </if>
+      <if test="busaddress != null" >
+        BUSADDRESS,
+      </if>
+      <if test="legaldocumenttype != null" >
+        LEGALDOCUMENTTYPE,
+      </if>
+      <if test="legaldocumentnumber != null" >
+        LEGALDOCUMENTNUMBER,
+      </if>
+      <if test="buslicensenumber != null" >
+        BUSLICENSENUMBER,
+      </if>
+      <if test="feerate != null" >
+        FEERATE,
+      </if>
+      <if test="oldornew != null" >
+        OLDORNEW,
+      </if>
+      <if test="servicetype != null" >
+        SERVICETYPE,
+      </if>
+      <if test="terminalnum != null" >
+        TERMINALNUM,
+      </if>
+      <if test="buslicensenumberExpiredate != null" >
+        BUSLICENSENUMBER_EXPIREDATE,
+      </if>
+      <if test="mcctype != null" >
+        MCCTYPE,
+      </if>
+      <if test="expandorganization != null" >
+        EXPANDORGANIZATION,
+      </if>
+      <if test="accountprovince != null" >
+        ACCOUNTPROVINCE,
+      </if>
+      <if test="accountcity != null" >
+        ACCOUNTCITY,
+      </if>
+      <if test="mchtrank != null" >
+        MCHTRANK,
+      </if>
+      <if test="subbankno != null" >
+        SUBBANKNO,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="mchtCode != null" >
+        #{mchtCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mchtName != null" >
+        #{mchtName,jdbcType=VARCHAR},
+      </if>
+      <if test="recommender != null" >
+        #{recommender,jdbcType=VARCHAR},
+      </if>
+      <if test="sourceChannel != null" >
+        #{sourceChannel,jdbcType=VARCHAR},
+      </if>
+      <if test="settBankName != null" >
+        #{settBankName,jdbcType=VARCHAR},
+      </if>
+      <if test="settAccountName != null" >
+        #{settAccountName,jdbcType=VARCHAR},
+      </if>
+      <if test="settAccountNum != null" >
+        #{settAccountNum,jdbcType=VARCHAR},
+      </if>
+      <if test="mchtLegal != null" >
+        #{mchtLegal,jdbcType=VARCHAR},
+      </if>
+      <if test="mchtContact != null" >
+        #{mchtContact,jdbcType=VARCHAR},
+      </if>
+      <if test="mchtContactNum != null" >
+        #{mchtContactNum,jdbcType=VARCHAR},
+      </if>
+      <if test="mchtRegAddress != null" >
+        #{mchtRegAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="mchtState != null" >
+        #{mchtState,jdbcType=VARCHAR},
+      </if>
+      <if test="mchtType != null" >
+        #{mchtType,jdbcType=VARCHAR},
+      </if>
+      <if test="mchtLevel != null" >
+        #{mchtLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="mchtApprovalDate != null" >
+        #{mchtApprovalDate,jdbcType=VARCHAR},
+      </if>
+      <if test="mchtModifyDate != null" >
+        #{mchtModifyDate,jdbcType=VARCHAR},
+      </if>
+      <if test="busaddress != null" >
+        #{busaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="legaldocumenttype != null" >
+        #{legaldocumenttype,jdbcType=VARCHAR},
+      </if>
+      <if test="legaldocumentnumber != null" >
+        #{legaldocumentnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="buslicensenumber != null" >
+        #{buslicensenumber,jdbcType=VARCHAR},
+      </if>
+      <if test="feerate != null" >
+        #{feerate,jdbcType=VARCHAR},
+      </if>
+      <if test="oldornew != null" >
+        #{oldornew,jdbcType=VARCHAR},
+      </if>
+      <if test="servicetype != null" >
+        #{servicetype,jdbcType=VARCHAR},
+      </if>
+      <if test="terminalnum != null" >
+        #{terminalnum,jdbcType=VARCHAR},
+      </if>
+      <if test="buslicensenumberExpiredate != null" >
+        #{buslicensenumberExpiredate,jdbcType=VARCHAR},
+      </if>
+      <if test="mcctype != null" >
+        #{mcctype,jdbcType=VARCHAR},
+      </if>
+      <if test="expandorganization != null" >
+        #{expandorganization,jdbcType=VARCHAR},
+      </if>
+      <if test="accountprovince != null" >
+        #{accountprovince,jdbcType=VARCHAR},
+      </if>
+      <if test="accountcity != null" >
+        #{accountcity,jdbcType=VARCHAR},
+      </if>
+      <if test="mchtrank != null" >
+        #{mchtrank,jdbcType=VARCHAR},
+      </if>
+      <if test="subbankno != null" >
+        #{subbankno,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.oracle.entity.TMerchantInfo" >
+    update T_MERCHANT_INFO
+    <set >
+      <if test="mchtName != null" >
+        MCHT_NAME = #{mchtName,jdbcType=VARCHAR},
+      </if>
+      <if test="recommender != null" >
+        RECOMMENDER = #{recommender,jdbcType=VARCHAR},
+      </if>
+      <if test="sourceChannel != null" >
+        SOURCE_CHANNEL = #{sourceChannel,jdbcType=VARCHAR},
+      </if>
+      <if test="settBankName != null" >
+        SETT_BANK_NAME = #{settBankName,jdbcType=VARCHAR},
+      </if>
+      <if test="settAccountName != null" >
+        SETT_ACCOUNT_NAME = #{settAccountName,jdbcType=VARCHAR},
+      </if>
+      <if test="settAccountNum != null" >
+        SETT_ACCOUNT_NUM = #{settAccountNum,jdbcType=VARCHAR},
+      </if>
+      <if test="mchtLegal != null" >
+        MCHT_LEGAL = #{mchtLegal,jdbcType=VARCHAR},
+      </if>
+      <if test="mchtContact != null" >
+        MCHT_CONTACT = #{mchtContact,jdbcType=VARCHAR},
+      </if>
+      <if test="mchtContactNum != null" >
+        MCHT_CONTACT_NUM = #{mchtContactNum,jdbcType=VARCHAR},
+      </if>
+      <if test="mchtRegAddress != null" >
+        MCHT_REG_ADDRESS = #{mchtRegAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="mchtState != null" >
+        MCHT_STATE = #{mchtState,jdbcType=VARCHAR},
+      </if>
+      <if test="mchtType != null" >
+        MCHT_TYPE = #{mchtType,jdbcType=VARCHAR},
+      </if>
+      <if test="mchtLevel != null" >
+        MCHT_LEVEL = #{mchtLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="mchtApprovalDate != null" >
+        MCHT_APPROVAL_DATE = #{mchtApprovalDate,jdbcType=VARCHAR},
+      </if>
+      <if test="mchtModifyDate != null" >
+        MCHT_MODIFY_DATE = #{mchtModifyDate,jdbcType=VARCHAR},
+      </if>
+      <if test="busaddress != null" >
+        BUSADDRESS = #{busaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="legaldocumenttype != null" >
+        LEGALDOCUMENTTYPE = #{legaldocumenttype,jdbcType=VARCHAR},
+      </if>
+      <if test="legaldocumentnumber != null" >
+        LEGALDOCUMENTNUMBER = #{legaldocumentnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="buslicensenumber != null" >
+        BUSLICENSENUMBER = #{buslicensenumber,jdbcType=VARCHAR},
+      </if>
+      <if test="feerate != null" >
+        FEERATE = #{feerate,jdbcType=VARCHAR},
+      </if>
+      <if test="oldornew != null" >
+        OLDORNEW = #{oldornew,jdbcType=VARCHAR},
+      </if>
+      <if test="servicetype != null" >
+        SERVICETYPE = #{servicetype,jdbcType=VARCHAR},
+      </if>
+      <if test="terminalnum != null" >
+        TERMINALNUM = #{terminalnum,jdbcType=VARCHAR},
+      </if>
+      <if test="buslicensenumberExpiredate != null" >
+        BUSLICENSENUMBER_EXPIREDATE = #{buslicensenumberExpiredate,jdbcType=VARCHAR},
+      </if>
+      <if test="mcctype != null" >
+        MCCTYPE = #{mcctype,jdbcType=VARCHAR},
+      </if>
+      <if test="expandorganization != null" >
+        EXPANDORGANIZATION = #{expandorganization,jdbcType=VARCHAR},
+      </if>
+      <if test="accountprovince != null" >
+        ACCOUNTPROVINCE = #{accountprovince,jdbcType=VARCHAR},
+      </if>
+      <if test="accountcity != null" >
+        ACCOUNTCITY = #{accountcity,jdbcType=VARCHAR},
+      </if>
+      <if test="mchtrank != null" >
+        MCHTRANK = #{mchtrank,jdbcType=VARCHAR},
+      </if>
+      <if test="subbankno != null" >
+        SUBBANKNO = #{subbankno,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where MCHT_CODE = #{mchtCode,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.oracle.entity.TMerchantInfo" >
+    update T_MERCHANT_INFO
+    set MCHT_NAME = #{mchtName,jdbcType=VARCHAR},
+      RECOMMENDER = #{recommender,jdbcType=VARCHAR},
+      SOURCE_CHANNEL = #{sourceChannel,jdbcType=VARCHAR},
+      SETT_BANK_NAME = #{settBankName,jdbcType=VARCHAR},
+      SETT_ACCOUNT_NAME = #{settAccountName,jdbcType=VARCHAR},
+      SETT_ACCOUNT_NUM = #{settAccountNum,jdbcType=VARCHAR},
+      MCHT_LEGAL = #{mchtLegal,jdbcType=VARCHAR},
+      MCHT_CONTACT = #{mchtContact,jdbcType=VARCHAR},
+      MCHT_CONTACT_NUM = #{mchtContactNum,jdbcType=VARCHAR},
+      MCHT_REG_ADDRESS = #{mchtRegAddress,jdbcType=VARCHAR},
+      MCHT_STATE = #{mchtState,jdbcType=VARCHAR},
+      MCHT_TYPE = #{mchtType,jdbcType=VARCHAR},
+      MCHT_LEVEL = #{mchtLevel,jdbcType=VARCHAR},
+      MCHT_APPROVAL_DATE = #{mchtApprovalDate,jdbcType=VARCHAR},
+      MCHT_MODIFY_DATE = #{mchtModifyDate,jdbcType=VARCHAR},
+      BUSADDRESS = #{busaddress,jdbcType=VARCHAR},
+      LEGALDOCUMENTTYPE = #{legaldocumenttype,jdbcType=VARCHAR},
+      LEGALDOCUMENTNUMBER = #{legaldocumentnumber,jdbcType=VARCHAR},
+      BUSLICENSENUMBER = #{buslicensenumber,jdbcType=VARCHAR},
+      FEERATE = #{feerate,jdbcType=VARCHAR},
+      OLDORNEW = #{oldornew,jdbcType=VARCHAR},
+      SERVICETYPE = #{servicetype,jdbcType=VARCHAR},
+      TERMINALNUM = #{terminalnum,jdbcType=VARCHAR},
+      BUSLICENSENUMBER_EXPIREDATE = #{buslicensenumberExpiredate,jdbcType=VARCHAR},
+      MCCTYPE = #{mcctype,jdbcType=VARCHAR},
+      EXPANDORGANIZATION = #{expandorganization,jdbcType=VARCHAR},
+      ACCOUNTPROVINCE = #{accountprovince,jdbcType=VARCHAR},
+      ACCOUNTCITY = #{accountcity,jdbcType=VARCHAR},
+      MCHTRANK = #{mchtrank,jdbcType=VARCHAR},
+      SUBBANKNO = #{subbankno,jdbcType=VARCHAR}
+    where MCHT_CODE = #{mchtCode,jdbcType=VARCHAR}
+  </update>
+</mapper>

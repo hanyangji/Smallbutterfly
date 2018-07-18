@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>    
+<beans xmlns="http://www.springframework.org/schema/beans"    
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xmlns:aop="http://www.springframework.org/schema/aop"   
+    xmlns:context="http://www.springframework.org/schema/context"  
+    xmlns:jee="http://www.springframework.org/schema/jee"  
+    xmlns:tx="http://www.springframework.org/schema/tx"  
+    xsi:schemaLocation="    
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd  
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd  
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd  
+        http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.0.xsd  
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">    
+        
+	<!-- 自动扫描 -->
+ 	<context:component-scan base-package="com" />  
+	<!-- 引入配置文件 -->
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="classpath:jdbc.properties" />
+	</bean>
+    <bean id="taskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+        <!-- 核心线程数 -->     
+        <property name="corePoolSize" value="5" />
+        <!-- 最大线程数 -->  
+        <property name="maxPoolSize" value="50" />
+        <!-- 队列最大长度 -->
+        <property name="queueCapacity" value="1000" />
+        <!-- 线程池维护线程所允许的空闲时间，默认为60s -->
+        <property name="keepAliveSeconds" value="60" />
+    </bean>
+
+    <bean id="dataSourceS" class="com.alibaba.druid.pool.DruidDataSource"
+		destroy-method="close">
+		<property name="dbType" value="mysql" />
+		<!-- 数据库基本信息配置 -->
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<property name="filters" value="stat" />
+		<!-- 最大并发连接数 -->
+		<property name="maxActive" value="${jdbc.maxActive}" />
+		<!-- 初始化连接数量 -->
+		<property name="initialSize" value="${jdbc.initialSize}" />
+		<!-- 配置获取连接等待超时的时间 -->
+		<property name="maxWait" value="${jdbc.maxWait}" />
+		<!-- 最小空闲连接数 -->
+		<property name="minIdle" value="${jdbc.minIdle}" />
+		<property name = "maxIdle" value = "${jdbc.maxIdle}" /> 
+		<!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+		<!-- <property name="timeBetweenEvictionRunsMillis" value="${jdbc.timeBetweenEvictionRunsMillis}" /> -->
+		<!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+		<property name="minEvictableIdleTimeMillis" value="${jdbc.minEvictableIdleTimeMillis}" />
+		<property name = "validationQuery" value = "${jdbc.validationQuery}" />
+		<property name="testWhileIdle" value="${jdbc.testWhileIdle}" />
+		<property name="testOnBorrow" value="${jdbc.testOnBorrow}" />
+		<property name="testOnReturn" value="${jdbc.testOnReturn}" />
+		<property name="maxOpenPreparedStatements" value="${jdbc.maxOpenPreparedStatements}" />
+		<!-- 打开 removeAbandoned 功能 -->
+		<property name="removeAbandoned" value="${jdbc.removeAbandoned}" />
+		<!-- 1800 秒，也就是 30 分钟 -->
+		<property name="removeAbandonedTimeout" value="${jdbc.removeAbandonedTimeout}" />
+		<!-- 关闭 abanded 连接时输出错误日志 -->
+		<property name="logAbandoned" value="${jdbc.logAbandoned}" />
+	</bean>
+	<!-- 配置数据源 -->
+	
+	<bean id="dataSourceO"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="oracle.jdbc.OracleDriver"/>
+		<property name="url" value="jdbc:oracle:thin:@10.48.1.253:1521:ora11g"/>
+		<property name="username" value="bankquery"/>
+		<property name="password" value="bank2017"/>
+	</bean> 
+	
+	
+	
+	<bean id="dataSource" class="com.oracle.data.DynamicDataSource">
+        <property name="targetDataSources">
+            <map key-type="java.lang.String">
+                <entry value-ref="dataSourceS" key="sqlserver"></entry>
+                <entry value-ref="dataSourceO" key="oracle"></entry>
+            </map>
+        </property>
+        <!-- 默认使用server的数据源 -->
+        <property name="defaultTargetDataSource" ref="dataSourceS"></property>
+    </bean>
+    
+
+	<!-- 配置mybatis的sqlSessionFactory -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<!-- 自动扫描mappers.xml文件 -->
+		<property name="mapperLocations" value="classpath:com/oracle/mapper/*.xml"></property>
+		<!-- mybatis配置文件 -->
+		<property name="configLocation" value="classpath:mybatis-config.xml"></property>
+	</bean>
+
+	<!-- DAO接口所在包名，Spring会自动查找其下的类 -->
+	<bean id="dao" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.oracle.dao" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+	</bean>
+
+	<!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<!-- 注解方式的事务管理 -->
+	<tx:annotation-driven transaction-manager="transactionManager" />  
+	<!-- <import resource="dubbo.xml"/> -->
+	
+</beans>

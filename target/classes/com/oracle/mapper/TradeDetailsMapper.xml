@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.oracle.dao.TradeDetailsMapper" >
+  <resultMap id="BaseResultMap" type="com.oracle.entity.TradeDetails" >
+    <result column="分公司代码" property="分公司代码" jdbcType="NVARCHAR" />
+    <result column="收单机构代码" property="收单机构代码" jdbcType="NVARCHAR" />
+    <result column="32域机构代码" property="三十二域机构代码" jdbcType="NVARCHAR" />
+    <result column="发送机构代码" property="发送机构代码" jdbcType="NVARCHAR" />
+    <result column="商户编码" property="商户编码" jdbcType="NVARCHAR" />
+    <result column="商户名称" property="商户名称" jdbcType="NVARCHAR" />
+    <result column="商户营业名称" property="商户营业名称" jdbcType="NVARCHAR" />
+    <result column="MCC(18域)" property="mcc十八域" jdbcType="NVARCHAR" />
+    <result column="MCC(42域)" property="mcc四十二域" jdbcType="NVARCHAR" />
+    <result column="MCC大类" property="mcc大类" jdbcType="NVARCHAR" />
+    <result column="交易日期及时间" property="交易日期及时间" jdbcType="NVARCHAR" />
+    <result column="清算日期" property="清算日期" jdbcType="NVARCHAR" />
+    <result column="交易分类" property="交易分类" jdbcType="NVARCHAR" />
+    <result column="交易类型" property="交易类型" jdbcType="NVARCHAR" />
+    <result column="交易状态" property="交易状态" jdbcType="NVARCHAR" />
+    <result column="清算标志" property="清算标志" jdbcType="NVARCHAR" />
+    <result column="交易金额" property="交易金额" jdbcType="DOUBLE" />
+    <result column="交易卡号" property="交易卡号" jdbcType="NVARCHAR" />
+    <result column="卡类别" property="卡类别" jdbcType="NVARCHAR" />
+    <result column="发卡机构代码" property="发卡机构代码" jdbcType="NVARCHAR" />
+    <result column="发卡机构代名称" property="发卡机构代名称" jdbcType="NVARCHAR" />
+    <result column="分店代码" property="分店代码" jdbcType="NVARCHAR" />
+    <result column="分店名称" property="分店名称" jdbcType="NVARCHAR" />
+    <result column="终端编码" property="终端编码" jdbcType="NVARCHAR" />
+    <result column="商户手续费" property="商户手续费" jdbcType="DOUBLE" />
+    <result column="商户产品手续费" property="商户产品手续费" jdbcType="DOUBLE" />
+    <result column="商户结算金额" property="商户结算金额" jdbcType="DOUBLE" />
+    <result column="集团商户编码" property="集团商户编码" jdbcType="NVARCHAR" />
+    <result column="银联卡境内外标志" property="银联卡境内外标志" jdbcType="NVARCHAR" />
+    <result column="特殊计费类型" property="特殊计费类型" jdbcType="NVARCHAR" />
+    <result column="特殊计费档次" property="特殊计费档次" jdbcType="NVARCHAR" />
+    <result column="输入点方式" property="输入点方式" jdbcType="NVARCHAR" />
+    <result column="系统跟踪号" property="系统跟踪号" jdbcType="NVARCHAR" />
+    <result column="通联收益" property="通联收益" jdbcType="DOUBLE" />
+    <result column="通联应付品牌服务费" property="通联应付品牌服务费" jdbcType="DOUBLE" />
+    <result column="支付方式" property="支付方式" jdbcType="NVARCHAR" />
+    <result column="检索参考号" property="检索参考号" jdbcType="NVARCHAR" />
+    <result column="wechat_openid" property="wechatOpenid" jdbcType="VARCHAR" />
+    <result column="近场扫码支付场景方式" property="近场扫码支付场景方式" jdbcType="VARCHAR" />
+    <result column="商户订单号" property="商户订单号" jdbcType="VARCHAR" />
+    <result column="银联双免标识" property="银联双免标识" jdbcType="VARCHAR" />
+    <result column="银联系交易成本优惠标识" property="银联系交易成本优惠标识" jdbcType="VARCHAR" />
+    <result column="insert_date" property="insertDate" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  <delete id="deleteBatch" parameterType="java.util.List" >
+    delete from mcht_trade_list_mingxi_copy
+    where 商户编码 in
+    <foreach item="idItem" collection="list" open="(" separator="," close=")">
+     #{idItem,jdbcType=NVARCHAR}
+     </foreach>
+  </delete>
+  <insert id="insert" parameterType="com.oracle.entity.TradeDetails" >
+    insert into mcht_trade_list_mingxi_copy (分公司代码, 收单机构代码, 32域机构代码, 
+      发送机构代码, 商户编码, 商户名称, 
+      商户营业名称, MCC(18域), MCC(42域), 
+      MCC大类, 交易日期及时间, 清算日期, 
+      交易分类, 交易类型, 交易状态, 
+      清算标志, 交易金额, 交易卡号, 
+      卡类别, 发卡机构代码, 发卡机构代名称, 
+      分店代码, 分店名称, 终端编码, 
+      商户手续费, 商户产品手续费, 商户结算金额, 
+      集团商户编码, 银联卡境内外标志, 特殊计费类型, 
+      特殊计费档次, 输入点方式, 系统跟踪号, 
+      通联收益, 通联应付品牌服务费, 支付方式, 
+      检索参考号, wechat_openid, 近场扫码支付场景方式, 
+      商户订单号, 银联双免标识, 银联系交易成本优惠标识, 
+      insert_date)
+    values (#{分公司代码,jdbcType=NVARCHAR}, #{收单机构代码,jdbcType=NVARCHAR}, #{32域机构代码,jdbcType=NVARCHAR}, 
+      #{发送机构代码,jdbcType=NVARCHAR}, #{商户编码,jdbcType=NVARCHAR}, #{商户名称,jdbcType=NVARCHAR}, 
+      #{商户营业名称,jdbcType=NVARCHAR}, #{mcc(18域),jdbcType=NVARCHAR}, #{mcc(42域),jdbcType=NVARCHAR}, 
+      #{mcc大类,jdbcType=NVARCHAR}, #{交易日期及时间,jdbcType=NVARCHAR}, #{清算日期,jdbcType=NVARCHAR}, 
+      #{交易分类,jdbcType=NVARCHAR}, #{交易类型,jdbcType=NVARCHAR}, #{交易状态,jdbcType=NVARCHAR}, 
+      #{清算标志,jdbcType=NVARCHAR}, #{交易金额,jdbcType=DOUBLE}, #{交易卡号,jdbcType=NVARCHAR}, 
+      #{卡类别,jdbcType=NVARCHAR}, #{发卡机构代码,jdbcType=NVARCHAR}, #{发卡机构代名称,jdbcType=NVARCHAR}, 
+      #{分店代码,jdbcType=NVARCHAR}, #{分店名称,jdbcType=NVARCHAR}, #{终端编码,jdbcType=NVARCHAR}, 
+      #{商户手续费,jdbcType=DOUBLE}, #{商户产品手续费,jdbcType=DOUBLE}, #{商户结算金额,jdbcType=DOUBLE}, 
+      #{集团商户编码,jdbcType=NVARCHAR}, #{银联卡境内外标志,jdbcType=NVARCHAR}, #{特殊计费类型,jdbcType=NVARCHAR}, 
+      #{特殊计费档次,jdbcType=NVARCHAR}, #{输入点方式,jdbcType=NVARCHAR}, #{系统跟踪号,jdbcType=NVARCHAR}, 
+      #{通联收益,jdbcType=DOUBLE}, #{通联应付品牌服务费,jdbcType=DOUBLE}, #{支付方式,jdbcType=NVARCHAR}, 
+      #{检索参考号,jdbcType=NVARCHAR}, #{wechatOpenid,jdbcType=VARCHAR}, #{近场扫码支付场景方式,jdbcType=VARCHAR}, 
+      #{商户订单号,jdbcType=VARCHAR}, #{银联双免标识,jdbcType=VARCHAR}, #{银联系交易成本优惠标识,jdbcType=VARCHAR}, 
+      #{insertDate,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.oracle.entity.TradeDetails" >
+    insert into mcht_trade_list_mingxi_copy
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="分公司代码 != null" >
+        分公司代码,
+      </if>
+      <if test="收单机构代码 != null" >
+        收单机构代码,
+      </if>
+      <if test="32域机构代码 != null" >
+        32域机构代码,
+      </if>
+      <if test="发送机构代码 != null" >
+        发送机构代码,
+      </if>
+      <if test="商户编码 != null" >
+        商户编码,
+      </if>
+      <if test="商户名称 != null" >
+        商户名称,
+      </if>
+      <if test="商户营业名称 != null" >
+        商户营业名称,
+      </if>
+      <if test="mcc(18域) != null" >
+        MCC(18域),
+      </if>
+      <if test="mcc(42域) != null" >
+        MCC(42域),
+      </if>
+      <if test="mcc大类 != null" >
+        MCC大类,
+      </if>
+      <if test="交易日期及时间 != null" >
+        交易日期及时间,
+      </if>
+      <if test="清算日期 != null" >
+        清算日期,
+      </if>
+      <if test="交易分类 != null" >
+        交易分类,
+      </if>
+      <if test="交易类型 != null" >
+        交易类型,
+      </if>
+      <if test="交易状态 != null" >
+        交易状态,
+      </if>
+      <if test="清算标志 != null" >
+        清算标志,
+      </if>
+      <if test="交易金额 != null" >
+        交易金额,
+      </if>
+      <if test="交易卡号 != null" >
+        交易卡号,
+      </if>
+      <if test="卡类别 != null" >
+        卡类别,
+      </if>
+      <if test="发卡机构代码 != null" >
+        发卡机构代码,
+      </if>
+      <if test="发卡机构代名称 != null" >
+        发卡机构代名称,
+      </if>
+      <if test="分店代码 != null" >
+        分店代码,
+      </if>
+      <if test="分店名称 != null" >
+        分店名称,
+      </if>
+      <if test="终端编码 != null" >
+        终端编码,
+      </if>
+      <if test="商户手续费 != null" >
+        商户手续费,
+      </if>
+      <if test="商户产品手续费 != null" >
+        商户产品手续费,
+      </if>
+      <if test="商户结算金额 != null" >
+        商户结算金额,
+      </if>
+      <if test="集团商户编码 != null" >
+        集团商户编码,
+      </if>
+      <if test="银联卡境内外标志 != null" >
+        银联卡境内外标志,
+      </if>
+      <if test="特殊计费类型 != null" >
+        特殊计费类型,
+      </if>
+      <if test="特殊计费档次 != null" >
+        特殊计费档次,
+      </if>
+      <if test="输入点方式 != null" >
+        输入点方式,
+      </if>
+      <if test="系统跟踪号 != null" >
+        系统跟踪号,
+      </if>
+      <if test="通联收益 != null" >
+        通联收益,
+      </if>
+      <if test="通联应付品牌服务费 != null" >
+        通联应付品牌服务费,
+      </if>
+      <if test="支付方式 != null" >
+        支付方式,
+      </if>
+      <if test="检索参考号 != null" >
+        检索参考号,
+      </if>
+      <if test="wechatOpenid != null" >
+        wechat_openid,
+      </if>
+      <if test="近场扫码支付场景方式 != null" >
+        近场扫码支付场景方式,
+      </if>
+      <if test="商户订单号 != null" >
+        商户订单号,
+      </if>
+      <if test="银联双免标识 != null" >
+        银联双免标识,
+      </if>
+      <if test="银联系交易成本优惠标识 != null" >
+        银联系交易成本优惠标识,
+      </if>
+      <if test="insertDate != null" >
+        insert_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="分公司代码 != null" >
+        #{分公司代码,jdbcType=NVARCHAR},
+      </if>
+      <if test="收单机构代码 != null" >
+        #{收单机构代码,jdbcType=NVARCHAR},
+      </if>
+      <if test="32域机构代码 != null" >
+        #{32域机构代码,jdbcType=NVARCHAR},
+      </if>
+      <if test="发送机构代码 != null" >
+        #{发送机构代码,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户编码 != null" >
+        #{商户编码,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户名称 != null" >
+        #{商户名称,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户营业名称 != null" >
+        #{商户营业名称,jdbcType=NVARCHAR},
+      </if>
+      <if test="mcc(18域) != null" >
+        #{mcc(18域),jdbcType=NVARCHAR},
+      </if>
+      <if test="mcc(42域) != null" >
+        #{mcc(42域),jdbcType=NVARCHAR},
+      </if>
+      <if test="mcc大类 != null" >
+        #{mcc大类,jdbcType=NVARCHAR},
+      </if>
+      <if test="交易日期及时间 != null" >
+        #{交易日期及时间,jdbcType=NVARCHAR},
+      </if>
+      <if test="清算日期 != null" >
+        #{清算日期,jdbcType=NVARCHAR},
+      </if>
+      <if test="交易分类 != null" >
+        #{交易分类,jdbcType=NVARCHAR},
+      </if>
+      <if test="交易类型 != null" >
+        #{交易类型,jdbcType=NVARCHAR},
+      </if>
+      <if test="交易状态 != null" >
+        #{交易状态,jdbcType=NVARCHAR},
+      </if>
+      <if test="清算标志 != null" >
+        #{清算标志,jdbcType=NVARCHAR},
+      </if>
+      <if test="交易金额 != null" >
+        #{交易金额,jdbcType=DOUBLE},
+      </if>
+      <if test="交易卡号 != null" >
+        #{交易卡号,jdbcType=NVARCHAR},
+      </if>
+      <if test="卡类别 != null" >
+        #{卡类别,jdbcType=NVARCHAR},
+      </if>
+      <if test="发卡机构代码 != null" >
+        #{发卡机构代码,jdbcType=NVARCHAR},
+      </if>
+      <if test="发卡机构代名称 != null" >
+        #{发卡机构代名称,jdbcType=NVARCHAR},
+      </if>
+      <if test="分店代码 != null" >
+        #{分店代码,jdbcType=NVARCHAR},
+      </if>
+      <if test="分店名称 != null" >
+        #{分店名称,jdbcType=NVARCHAR},
+      </if>
+      <if test="终端编码 != null" >
+        #{终端编码,jdbcType=NVARCHAR},
+      </if>
+      <if test="商户手续费 != null" >
+        #{商户手续费,jdbcType=DOUBLE},
+      </if>
+      <if test="商户产品手续费 != null" >
+        #{商户产品手续费,jdbcType=DOUBLE},
+      </if>
+      <if test="商户结算金额 != null" >
+        #{商户结算金额,jdbcType=DOUBLE},
+      </if>
+      <if test="集团商户编码 != null" >
+        #{集团商户编码,jdbcType=NVARCHAR},
+      </if>
+      <if test="银联卡境内外标志 != null" >
+        #{银联卡境内外标志,jdbcType=NVARCHAR},
+      </if>
+      <if test="特殊计费类型 != null" >
+        #{特殊计费类型,jdbcType=NVARCHAR},
+      </if>
+      <if test="特殊计费档次 != null" >
+        #{特殊计费档次,jdbcType=NVARCHAR},
+      </if>
+      <if test="输入点方式 != null" >
+        #{输入点方式,jdbcType=NVARCHAR},
+      </if>
+      <if test="系统跟踪号 != null" >
+        #{系统跟踪号,jdbcType=NVARCHAR},
+      </if>
+      <if test="通联收益 != null" >
+        #{通联收益,jdbcType=DOUBLE},
+      </if>
+      <if test="通联应付品牌服务费 != null" >
+        #{通联应付品牌服务费,jdbcType=DOUBLE},
+      </if>
+      <if test="支付方式 != null" >
+        #{支付方式,jdbcType=NVARCHAR},
+      </if>
+      <if test="检索参考号 != null" >
+        #{检索参考号,jdbcType=NVARCHAR},
+      </if>
+      <if test="wechatOpenid != null" >
+        #{wechatOpenid,jdbcType=VARCHAR},
+      </if>
+      <if test="近场扫码支付场景方式 != null" >
+        #{近场扫码支付场景方式,jdbcType=VARCHAR},
+      </if>
+      <if test="商户订单号 != null" >
+        #{商户订单号,jdbcType=VARCHAR},
+      </if>
+      <if test="银联双免标识 != null" >
+        #{银联双免标识,jdbcType=VARCHAR},
+      </if>
+      <if test="银联系交易成本优惠标识 != null" >
+        #{银联系交易成本优惠标识,jdbcType=VARCHAR},
+      </if>
+      <if test="insertDate != null" >
+        #{insertDate,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>
